@@ -1,0 +1,156 @@
+:root {
+  --color-primary: #50dcff;
+  --color-body: #d3d3d3;
+  --color-headings: #ffffff;
+  --color-background: #151515;
+  --border-radius: 6px;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+/*Typography*/
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+
+  color: var(--color-body);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--color-headings);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 7rem;
+  line-height: 7rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+p {
+  line-height: 2.2rem;
+}
+
+/* Icons */
+
+.logo {
+  fill: var(--color-headings);
+  height: 30px;
+}
+
+/* Grids & Containers*/
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+}
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*Buttons*/
+
+.btn {
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 1.2rem 4rem;
+  margin: 1rem 0;
+}
+
+.btn--primary {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: none;
+  transition: background 0.3s;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.btn:focus-visible {
+  color: var(--color-headings);
+}
+
+/* .btn--primary:focus {
+  color: var(--color-headings);
+  border: 1px solid var(--color-headings);
+} */
+
+/* Hero */
+
+.hero-main {
+  align-self: center;
+  padding: 100px 0;
+}
+
+.hero-image__image {
+  width: 100%;
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-main {
+    text-align: center;
+    padding: 100px 0 0 0;
+    margin: 0 auto;
+  }
+
+  .hero-image__image {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-main__desc {
+    max-width: 50ch;
+  }
+}
