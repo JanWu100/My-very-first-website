@@ -12,7 +12,7 @@ window.addEventListener("scroll", function (e) {
   let scaleRate = scrolled * 0.0002;
 
   targetOne.style.transform = `translate3d(0px, ${rateOne}px ,0px)`;
-  targetOne.style.transform = `scale(${1 - scaleRate})`;
+  //targetOne.style.transform = `scale(${1 - scaleRate})`;
   targetTwo.style.transform = `rotate(${rateTwo}deg)`;
 
   targetThree.style.transform = `translate3d(0px, ${rateThree}px ,0px)`;
