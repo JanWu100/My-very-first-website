@@ -143,11 +143,6 @@ p {
   padding: 100px 0;
 }
 
-.hero-image__image {
-  width: 100%;
-  /* margin: 50px 0; */
-}
-
 @media screen and (max-width: 768px) {
   .hero-main {
     text-align: center;
@@ -166,7 +161,8 @@ p {
 
 .z0,
 .z1,
-.z2 {
+.z2,
+.z4 {
   position: absolute;
   width: 100%;
   left: 50%;
@@ -174,21 +170,56 @@ p {
   margin-left: -50%;
   z-index: -1;
 }
+.z1 {
+  animation: bounce 2s infinite;
+}
+
+.z4 {
+  transform-origin: 86% 28%;
+  /* position: absolute;
+  width: 40px;
+  left: 80%;
+  margin-top: 24%; */
+}
+.z1,
+.z2,
+.z4 {
+  filter: drop-shadow(5px 0 10px rgba(0, 0, 0, 0.15));
+}
 
 @media screen and (min-width: 768px) {
   .z0,
   .z1,
-  .z2 {
+  .z2,
+  .z4 {
     width: 55%;
     min-width: 500px;
     max-width: 550px;
     top: 40px;
 
-    left: 45%;
+    left: 48%;
     margin-left: 0;
+  }
+  .z4 {
+    /* position: relative;
+    margin-top: 0;
+    top: -100px; */
+    /* transform-origin: top; */
   }
 }
 
 .spacer {
   height: 3000px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
 }
