@@ -41,10 +41,11 @@ h4 {
   margin: 0;
   color: var(--color-headings);
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 8rem;
   line-height: 1;
 }
 h2 {
@@ -54,17 +55,23 @@ h3 {
   font-size: 3rem;
 }
 h4 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
   color: var(--color-primary);
 }
 p {
   line-height: 1.5;
 }
+.scroll-icon__text {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: var(--color-body);
+}
 
 @media screen and (min-width: 768px) {
   p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -102,7 +109,7 @@ p {
 
 .btn {
   border-radius: var(--border-radius);
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   white-space: nowrap;
   text-align: center;
@@ -119,6 +126,11 @@ p {
 
   transition: all 0.3s;
 }
+@media screen and (max-width: 768px) {
+  .btn-hero {
+    margin-bottom: 100px;
+  }
+}
 
 .btn--primary:hover {
   background: var(--color-primary);
@@ -131,6 +143,25 @@ p {
   box-shadow: var(--light-shadow);
 }
 
+.scroll {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .scroll {
+    transform: translateY(-70px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .scroll {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+
+    top: 540px;
+  }
+}
+
 /* .btn--primary:focus {
   color: var(--color-headings);
   border: 1px solid var(--color-headings);
@@ -140,7 +171,26 @@ p {
 
 .hero-main {
   align-self: center;
-  padding: 100px 0;
+  padding: 100px 0 50px;
+}
+
+.scroll-icon {
+  width: 22px;
+  height: 50px;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  background: none;
+  margin: 0 auto;
+}
+
+.scroll-icon__circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+
+  margin: 2px auto;
+  animation: scroll-effect 4s infinite;
 }
 
 @media screen and (max-width: 768px) {
@@ -219,7 +269,13 @@ p {
   50% {
     transform: translateY(10px);
   }
+}
+
+@keyframes scroll-effect {
   0% {
     transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(28px);
   }
 }
