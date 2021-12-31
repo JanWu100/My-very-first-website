@@ -207,7 +207,7 @@ p {
 
 @media screen and (min-width: 768px) {
   .hero-main__desc {
-    max-width: 50ch;
+    max-width: 60ch;
   }
 }
 
