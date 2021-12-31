@@ -12,6 +12,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.anchor-scroll,
+.anchor-scroll:hover,
+.anchor-scroll:focus,
+.anchor-scroll:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   background-color: var(--color-background);
   overflow-x: hidden;
@@ -20,7 +32,7 @@ body {
 /*Typography*/
 
 ::selection {
-  background: var(--color-primary);
+  background: #50dcffa4;
   color: #fff;
 }
 
@@ -50,7 +62,7 @@ h1 {
   line-height: 1;
 }
 h2 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 h3 {
   font-size: 3rem;
@@ -132,7 +144,7 @@ p {
 }
 @media screen and (max-width: 768px) {
   .btn-hero {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
 }
 
@@ -153,7 +165,7 @@ p {
 
 @media screen and (max-width: 768px) {
   .scroll {
-    transform: translateY(-70px);
+    transform: translateY(-110px);
   }
 }
 @media screen and (min-width: 768px) {
@@ -162,7 +174,7 @@ p {
     transform: translateX(-50%);
     left: 50%;
 
-    top: 600px;
+    top: 630px;
   }
 }
 
@@ -170,6 +182,17 @@ p {
   color: var(--color-headings);
   border: 1px solid var(--color-headings);
 } */
+
+/* Headings */
+
+.heading {
+  text-align: center;
+  margin-top: 6rem;
+}
+.heading p {
+  max-width: 700px;
+  margin: 2rem auto;
+}
 
 /* Hero */
 
@@ -211,6 +234,50 @@ p {
   }
 }
 
+/* SHAMEFUL PLACEHOLDER TRICK TO FIX POSITIONING AFTER PARALLAX */
+@media screen and (min-width: 768px) {
+  h1 {
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 10rem;
+    max-width: 100%;
+  }
+}
+
+.hero-placeholder {
+  min-height: 120px;
+}
+@media screen and (min-width: 400px) {
+  .hero-placeholder {
+    min-height: 330px;
+  }
+}
+@media screen and (min-width: 560px) {
+  .hero-placeholder {
+    min-height: 400px;
+  }
+}
+@media screen and (min-width: 660px) {
+  .hero-placeholder {
+    min-height: 500px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-placeholder {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .hero-placeholder {
+    display: block;
+    min-height: 100px;
+  }
+}
+
 /* Parallax */
 
 .z0,
@@ -218,8 +285,10 @@ p {
 .z2,
 .z4 {
   position: absolute;
+
   width: 90%;
   left: 5%;
+
   z-index: -1;
 }
 .z1 {
@@ -259,7 +328,7 @@ p {
   .z1,
   .z2,
   .z4 {
-    top: 40px;
+    top: 20px;
     left: 48%;
   }
 }
