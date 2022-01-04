@@ -411,11 +411,31 @@ p {
 
 /* RWD Section */
 
+.rwd__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 4rem 0 4rem 0;
+}
+.rwd__bullets p {
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 768px) {
+  .rwd__bullets .media {
+    align-self: center;
+  }
+}
+
 .rwd-image {
   position: absolute;
   width: 100%;
 
-  top: 52%;
+  top: 75%;
   z-index: 1;
 }
 .rwd__heading {
@@ -424,7 +444,7 @@ p {
 }
 .rwd .grid {
   position: relative;
-  min-height: 800px;
+  min-height: 700px;
 }
 
 @media screen and (min-width: 600px) {
@@ -432,11 +452,10 @@ p {
     max-width: 100%;
   }
   .rwd-image {
-    top: 40%;
+    top: 58%;
   }
   .rwd .grid {
-    position: relative;
-    min-height: 900px;
+    min-height: 800px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -445,24 +464,26 @@ p {
     text-align: left;
   }
   .rwd .grid {
-    min-height: 600px;
+    min-height: unset;
+    max-height: 480px;
   }
-}
-
-@media screen and (min-width: 768px) {
   .rwd-image {
     position: absolute;
     width: initial;
-    top: 0px;
+    top: 0;
 
-    left: 50%;
+    left: 46%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .rwd .grid {
+    max-height: 340px;
   }
 }
 
 .background-skewed {
   min-height: 600px;
   padding: 16rem 0 10rem;
-  transform: translateY(-200px);
 
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
   /* background: linear-gradient(
@@ -555,13 +576,15 @@ p {
 }
 
 .qualities {
-  margin-top: 4rem;
   display: flex;
   flex-wrap: wrap;
   row-gap: 30px;
   column-gap: 50px;
   justify-content: center;
   max-width: 1240px;
+  background: var(--color-background-lighter);
+
+  padding-bottom: 10rem;
 }
 
 .qualities .media {
@@ -571,4 +594,9 @@ p {
   .qualities .media {
     width: 80%;
   }
+}
+
+/* Other useful data  */
+#otherdata.heading {
+  margin-top: 0;
 }
