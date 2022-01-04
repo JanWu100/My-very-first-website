@@ -97,9 +97,12 @@ p {
 
 /* Icons */
 
-.logo {
-  fill: var(--color-headings);
+.icon {
+  width: 30px;
   height: 30px;
+}
+.icon--primary {
+  fill: var(--color-primary);
 }
 
 /* Grids & Containers*/
@@ -541,4 +544,12 @@ p {
   width: 8px;
   height: 8px;
   background: rgb(71, 71, 71);
+}
+
+/* Media element */
+
+.media {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
