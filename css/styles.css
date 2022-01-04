@@ -204,7 +204,7 @@ p {
 
 .heading {
   text-align: center;
-  margin-top: 12rem;
+  margin-top: 10rem;
   margin-bottom: 2rem;
 }
 .heading p {
@@ -259,7 +259,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   h1 {
     font-size: 10rem;
     max-width: 100%;
@@ -289,7 +289,7 @@ p {
     display: none;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .hero-placeholder {
     display: block;
     min-height: 100px;
@@ -341,7 +341,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1100px) {
   .z0,
   .z1,
   .z2,
@@ -483,7 +483,7 @@ p {
 
 .background-skewed {
   min-height: 600px;
-  padding: 16rem 0 10rem;
+  padding: 16rem 0 4rem;
 
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
   /* background: linear-gradient(
@@ -513,7 +513,7 @@ p {
 .carousel__image {
   border-radius: 30px 0 0 30px;
   background: white;
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .carousel__description {
@@ -522,7 +522,7 @@ p {
   justify-content: center;
   background: var(--color-background);
   /* padding: 8rem 10%; */
-  min-height: 400px;
+  min-height: 300px;
   padding: 3rem;
   border-radius: 0 30px 30px 0;
   text-align: center;
@@ -575,6 +575,11 @@ p {
   gap: 20px;
 }
 
+/* Qualities section  */
+#qualities {
+  background: var(--color-background-lighter);
+}
+
 .qualities {
   display: flex;
   flex-wrap: wrap;
@@ -582,7 +587,6 @@ p {
   column-gap: 50px;
   justify-content: center;
   max-width: 1240px;
-  background: var(--color-background-lighter);
 
   padding-bottom: 10rem;
 }
@@ -597,6 +601,3 @@ p {
 }
 
 /* Other useful data  */
-#otherdata.heading {
-  margin-top: 0;
-}
