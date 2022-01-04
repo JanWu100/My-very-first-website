@@ -372,7 +372,7 @@ p {
 }
 
 .great-three-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .great-three-card__img {
@@ -394,5 +394,74 @@ p {
   }
   .great-three-card {
     max-width: 260px;
+  }
+}
+
+/* RWD Section */
+
+.rwd-image {
+  position: absolute;
+  width: 100%;
+
+  top: 52%;
+  z-index: 1;
+}
+.rwd__heading {
+  max-width: 300px;
+  margin-inline: auto;
+}
+.rwd .grid {
+  position: relative;
+  min-height: 800px;
+}
+
+@media screen and (min-width: 600px) {
+  .rwd__heading {
+    max-width: 100%;
+  }
+  .rwd-image {
+    top: 40%;
+  }
+  .rwd .grid {
+    position: relative;
+    min-height: 900px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .rwd__heading,
+  .rwd__desription {
+    text-align: left;
+  }
+  .rwd .grid {
+    min-height: 600px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .rwd-image {
+    position: absolute;
+    width: initial;
+    top: 0px;
+
+    left: 50%;
+  }
+}
+
+.background-skewed {
+  min-height: 600px;
+  padding: 16rem 0 10rem;
+  transform: translateY(-200px);
+
+  clip-path: polygon(0 31%, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(21, 21, 21, 1) 100%
+  );
+}
+
+@media screen and (min-width: 1240px) {
+  .background-skewed {
+    clip-path: polygon(0 45%, 100% 0, 100% 100%, 0% 100%);
   }
 }
