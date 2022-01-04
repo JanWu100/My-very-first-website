@@ -27,7 +27,7 @@ html {
 
 body {
   background-color: var(--color-background);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /*Typography*/
@@ -84,11 +84,14 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  p {
-    font-size: 1.6rem;
-  }
   h1 {
     font-size: 10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  p {
+    font-size: 1.6rem;
   }
 }
 
@@ -105,6 +108,11 @@ p {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding-inline: 50px;
+  }
 }
 
 .grid {
@@ -180,7 +188,7 @@ p {
     transform: translateX(-50%);
     left: 50%;
 
-    top: 630px;
+    top: 660px;
   }
 }
 
@@ -485,9 +493,13 @@ p {
 }
 
 .carousel__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--color-background);
-  padding: 8rem;
+  /* padding: 8rem 10%; */
   min-height: 400px;
+  padding: 3rem;
   border-radius: 0 30px 30px 0;
   text-align: center;
 }
@@ -496,7 +508,7 @@ p {
     border-radius: 30px 30px 0 0;
     width: 80%;
     min-width: 400px;
-    max-width: 560px;
+    max-width: 500px;
 
     margin: 0 auto;
   }
@@ -505,9 +517,9 @@ p {
     border-radius: 0 0 30px 30px;
     width: 80%;
     min-width: 400px;
-    max-width: 560px;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 4rem;
+    /* padding: 4rem 10%; */
   }
 }
 
