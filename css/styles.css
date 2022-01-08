@@ -601,3 +601,123 @@ p {
 }
 
 /* Other useful data  */
+.counter-bar {
+  padding-top: 3rem;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 10px solid var(--color-primary);
+  animation: hours-grow 2s;
+}
+
+.counter-barTwo {
+  padding-top: 3rem;
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 10px solid var(--color-primary);
+  animation: hours-growTwo 2s;
+}
+
+.counter-bar__left,
+.counter-bar__right {
+  display: inline-block;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  font-size: 2.6rem;
+  line-height: 0;
+}
+.counter-bar__left {
+  animation: show 1s;
+}
+/* .counter-bar__hours {
+  font-size: 8rem;
+  animation: counter 5s;
+  counter-reset: num var(--num);
+} */
+
+@keyframes hours-grow {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes hours-growTwo {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 27;
+  inherits: false;
+}
+
+@property --numTwo {
+  syntax: "<integer>";
+  initial-value: 10;
+  inherits: false;
+}
+
+.counter-bar__hours,
+.counter-bar__hours-two {
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  font-size: 8rem;
+  padding-right: 1rem;
+}
+
+.counter-bar__hours {
+  counter-reset: num var(--num);
+  animation: counter 2s;
+}
+.counter-bar__hours-two {
+  counter-reset: numTwo var(--numTwo);
+  animation: counterTwo 2s;
+}
+.counter-bar__hours::after {
+  content: counter(num);
+}
+
+.counter-bar__hours-two::after {
+  content: counter(numTwo);
+}
+
+@keyframes counter {
+  0% {
+    --num: 0;
+  }
+
+  100% {
+    --num: 27;
+  }
+}
+
+@keyframes counterTwo {
+  0% {
+    --numTwo: 0;
+  }
+
+  100% {
+    --numTwo: 10;
+  }
+}
