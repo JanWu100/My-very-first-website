@@ -110,6 +110,34 @@ p {
   fill: var(--color-primary);
 }
 
+.technologies__icon {
+  font-size: 50px;
+  color: rgb(71, 71, 71);
+  width: 70px;
+  text-align: center;
+  height: 70px;
+  border: 2px solid rgb(71, 71, 71);
+  background: none;
+  transition: all 0.3s;
+  transition-property: color, border-color;
+  margin: 10px;
+}
+
+.technologies__icon:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.technologies__text {
+  font-size: 1.6rem;
+  color: rgb(110, 110, 110);
+  transition: color 0.3s;
+}
+
+.technologies__text:hover {
+  color: var(--color-primary);
+}
+
 /* Grids & Containers*/
 
 .container {
@@ -141,6 +169,13 @@ p {
   .grid--1x5 {
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
   }
+}
+
+.technologies__wrapper {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /*Buttons*/
@@ -752,4 +787,10 @@ p {
   100% {
     --numTwo: 10;
   }
+}
+
+/* SKILLS SECTION  */
+
+.skills__icon {
+  width: 100px;
 }
