@@ -38,8 +38,8 @@ body {
 /*Typography*/
 
 ::selection {
-  background: #50dcffa4;
-  color: #fff;
+  background: #79e4ff;
+  color: rgb(0, 0, 0);
 }
 
 html {
@@ -179,6 +179,13 @@ p {
   justify-content: center;
 }
 
+.background-duo {
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 50%,
+    var(--color-background-lighter) 50%)
+}
+
 /* Lists  */
 
 .card {
@@ -285,12 +292,23 @@ p {
   margin: 1rem 0;
 }
 
+.btn--black:active {
+  background: chartreuse;
+}
+
 .btn--primary {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
   background: none;
 
   transition: all 0.3s;
+}
+
+.btn--black {
+  background: var(--color-background);
+  transition: all 0.3s;
+  color: white;
+  border: none;
 }
 
 .btn--wide {
@@ -307,6 +325,11 @@ p {
   background: var(--color-primary);
   color: var(--color-background);
   box-shadow: var(--light-shadow);
+}
+
+.btn--black:hover {
+  background: #004c5f;
+  
 }
 
 .btn:focus-visible {
@@ -490,7 +513,8 @@ p {
 }
 
 .spacer {
-  height: 3000px;
+  height: 500px;
+  background: var(--color-background-lighter);
 }
 
 @keyframes bounce {
@@ -894,4 +918,36 @@ p {
 
 .skills__icon {
   width: 100px;
+}
+
+/* CTA  */
+
+.cta {
+  color: var(--color-background);
+  background: var(--color-primary);
+  display: flex;
+  padding: 5rem;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  margin: 8rem auto;
+  
+}
+
+.cta__body {
+  padding-right: 5rem;
+}
+
+.cta h2 {
+  color:var(--color-background);
+}
+
+@media screen and (max-width: 1024px) {
+  .cta {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta__body {
+    padding-right: 0;
+  }
 }
