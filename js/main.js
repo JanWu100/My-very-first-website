@@ -27,3 +27,31 @@ window.addEventListener("scroll", function (e) {
 
 ///////////////////////
 AOS.init();
+//////////////////////
+
+///////////////counter on viewport//////////////////////
+
+const isInViewport = function (e) {
+  const bounding = e.getBoundingClientRect();
+  return (
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    bounding.right <=
+      (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+const counterLoader = document.querySelector(".counter__loader");
+const counter = document.querySelector(".counter");
+const counterPlaceholder = document.querySelector(".counter__placeholder");
+window.addEventListener(
+  "scroll",
+  function (event) {
+    if (isInViewport(counterLoader)) {
+      counter.classList.remove("invisible");
+      counterPlaceholder.classList.add("invisible");
+    }
+  },
+  false
+);

@@ -767,6 +767,16 @@ p {
 .counter {
   padding: 0 6rem;
 }
+
+.invisible {
+  display: none;
+}
+
+.counter__placeholder {
+  height: 200px;
+  opacity: 0;
+}
+
 .counter-bar {
   margin-top: 6rem;
   display: flex;
@@ -914,6 +924,8 @@ p {
   }
 }
 
+
+
 /* SKILLS SECTION  */
 
 .skills__icon {
@@ -951,3 +963,7 @@ p {
     padding-right: 0;
   }
 }
+
+
+
+
