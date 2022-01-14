@@ -32,7 +32,7 @@ html {
 
 body {
   background-color: var(--color-background);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 /*Typography*/
@@ -172,10 +172,103 @@ p {
 }
 
 .technologies__wrapper {
+  margin-top: 8rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* Lists  */
+
+.card {
+  position: relative;
+  text-align: center;
+  background: var(--color-background-lighter);
+  padding: 3rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    justify-self: center;
+    min-width: 400px;
+  }
+}
+
+.hot-deal {
+  position: absolute;
+  top: 0;
+  right: 8%;
+  max-height: 100px;
+}
+.card--wrapper {
+  gap: 5rem 2rem;
+  
+}
+
+.card--normal {
+  transform: scale(0.95);
+  transition: transform 0.3s;
+}
+.card--premium {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+
+  border: 2px solid var(--color-primary);
+}
+
+.card--normal:hover {
+  transform: scale(1);
+}
+.card--premium:hover {
+  transform: scale(1.1);
+}
+
+.card__top,
+.card__type,
+.card__price,
+.card__period {
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+}
+
+.card__top {
+  font-size: 1.8rem;
+
+  color: var(--color-primary);
+}
+.card__type {
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+.card__price {
+  font-size: 12rem;
+  margin-top: 2rem;
+}
+.card__period {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.card__list-item {
+  list-style: none;
+  line-height: 2;
+  text-align: left;
+  font-size: 1.8rem;
+}
+
+.card__list {
+  padding: 0px;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-20px);
+}
+
+.icon--list {
+  margin-right: 2rem;
+  color: var(--color-primary);
 }
 
 /*Buttons*/
@@ -198,6 +291,11 @@ p {
   background: none;
 
   transition: all 0.3s;
+}
+
+.btn--wide {
+  width: 80%;
+  min-width: 200px;
 }
 @media screen and (max-width: 768px) {
   .btn-hero {
@@ -642,6 +740,9 @@ p {
 
 /* Other useful data  */
 
+.counter {
+  padding: 0 6rem;
+}
 .counter-bar {
   margin-top: 6rem;
   display: flex;
