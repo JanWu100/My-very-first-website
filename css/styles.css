@@ -2,7 +2,7 @@
   --color-primary: #50dcff;
   --color-body: #d3d3d3;
   --color-headings: #ffffff;
-  --color-background: #151515;
+  --color-background: rgb(21, 21, 21);
   --color-background-lighter: #212121;
   --border-radius: 6px;
   --light-shadow: 0px 0px 10px 3px rgba(34, 255, 255, 0.2);
@@ -183,10 +183,16 @@ p {
   background: linear-gradient(
     180deg,
     var(--color-background) 50%,
-    var(--color-background-lighter) 50%)
+    var(--color-background-lighter) 50%
+  );
 }
 
 /* Lists  */
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
 
 .card {
   position: relative;
@@ -210,7 +216,6 @@ p {
 }
 .card--wrapper {
   gap: 5rem 2rem;
-  
 }
 
 .card--normal {
@@ -329,7 +334,6 @@ p {
 
 .btn--black:hover {
   background: #004c5f;
-  
 }
 
 .btn:focus-visible {
@@ -352,7 +356,12 @@ p {
     transform: translateX(-50%);
     left: 50%;
 
-    top: 660px;
+    top: 800px;
+  }
+}
+@media screen and (min-width: 1024px){
+  .scroll {
+    top: 740px;
   }
 }
 
@@ -378,6 +387,10 @@ p {
 .hero-main {
   align-self: center;
   padding: 100px 0 50px;
+}
+
+.hero {
+  position: relative;
 }
 
 .scroll-icon {
@@ -507,7 +520,7 @@ p {
   .z1,
   .z2,
   .z4 {
-    top: 20px;
+    top: 0;
     left: 48%;
   }
 }
@@ -924,8 +937,6 @@ p {
   }
 }
 
-
-
 /* SKILLS SECTION  */
 
 .skills__icon {
@@ -943,7 +954,6 @@ p {
   flex-direction: row;
   width: 90%;
   margin: 8rem auto;
-  
 }
 
 .cta__body {
@@ -951,7 +961,7 @@ p {
 }
 
 .cta h2 {
-  color:var(--color-background);
+  color: var(--color-background);
 }
 
 @media screen and (max-width: 1024px) {
@@ -964,6 +974,82 @@ p {
   }
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(21, 21, 21, 0.705);
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  
+}
+.nav__list {
+  width: 100%;
+  
+}
+.collapsed {
+  max-height: 0vw;
+  display: none;
+  
+}
+.nav__item {
+  padding: 2rem 2rem;
+  border-bottom: 1px solid var(--color-background-lighter);
+  text-align: center;
+}
+.nav__item a {
+  color: white;
+
+  text-decoration: none;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
 
 
+.nav__logo {
+  height: 40px;
+  width: 200px;
+  fill: white;
+  margin: 2rem 0;
+}
 
+.nav__burger-menu {
+   font-size: 3rem;
+   color: white;
+   opacity: 0.7;
+   transition: opacity 0.3s;
+   cursor: pointer;
+   padding: 1rem 1.1rem;
+   margin-right: 2rem;
+   border-radius: 0.5rem;
+   border: 1px solid white;
+   
+}
+
+.nav__item a:hover,
+.nav__burger-menu:hover {
+  opacity: 1;
+  /* text-decoration: 1px underline #50dcff; */
+}
+
+
+@media screen and (min-width: 768px) {
+  .nav__list {
+    display: flex;
+    width: auto;
+    max-height: 100vw;
+  }
+  .nav__item {
+    padding: 0 3rem;
+    border: 0;
+  }
+  .nav__item a {
+    font-size: 2.6rem;
+  }
+  .nav__burger-menu {
+    display: none;
+  }
+}

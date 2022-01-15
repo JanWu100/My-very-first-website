@@ -21,8 +21,22 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
+    <nav class="nav">
+      <a href="/"><svg class="logo nav__logo">
+        <use href="images/logo.svg#logo"></use>
+      </svg></a>
+
+      <i class="fas fa-bars nav__burger-menu"></i>
+      
+        <ul class="list nav__list collapsed">
+          <li class="nav__item"><a href="#">Random section</a></li>
+          <li class="nav__item"><a href="#">About me</a></li>
+          <li class="nav__item"><a href="#">contact</a></li>
+        </ul>
+      
+    </nav>
     <section class="container">
-      <div class="grid grid--1x2">
+      <div class="grid grid--1x2 hero">
         <div class="hero-main">
           <h4>Hello there, welcome to</h4>
           <h1>my very first website</h1>

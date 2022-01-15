@@ -55,3 +55,24 @@ window.addEventListener(
   },
   false
 );
+
+///////// Navigation ////////
+
+const burger = document.querySelector(".nav__burger-menu");
+
+window.addEventListener("click", function(event) {
+  document.querySelector(".nav__list").classList.toggle("collapsed");
+})
+let minWidth = window.matchMedia("(min-width: 768px)")
+
+function myFunction(e) {
+  if (e.matches) { 
+    document.querySelector(".nav__list").classList.add("collapsed");
+    
+  }
+}
+
+window.addEventListener('resize', function(event){
+ myFunction(minWidth);
+});
+
