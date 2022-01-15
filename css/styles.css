@@ -359,7 +359,7 @@ p {
     top: 800px;
   }
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .scroll {
     top: 740px;
   }
@@ -564,6 +564,11 @@ p {
 
 .great-three-card__img {
   margin-bottom: 3rem;
+}
+.great-three-card svg{
+  margin-bottom: 3rem;
+  height: 170px;
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -982,16 +987,13 @@ p {
   background: rgba(21, 21, 21, 0.705);
   max-width: 1400px;
   margin: 0 auto 3rem;
-  
 }
 .nav__list {
   width: 100%;
-  
 }
 .collapsed {
   max-height: 0vw;
   display: none;
-  
 }
 .nav__item {
   padding: 2rem 2rem;
@@ -1008,7 +1010,6 @@ p {
   transition: all 0.3s;
 }
 
-
 .nav__logo {
   height: 40px;
   width: 200px;
@@ -1017,16 +1018,15 @@ p {
 }
 
 .nav__burger-menu {
-   font-size: 3rem;
-   color: white;
-   opacity: 0.7;
-   transition: opacity 0.3s;
-   cursor: pointer;
-   padding: 1rem 1.1rem;
-   margin-right: 2rem;
-   border-radius: 0.5rem;
-   border: 1px solid white;
-   
+  font-size: 3rem;
+  color: white;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  margin-right: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid white;
 }
 
 .nav__item a:hover,
@@ -1034,7 +1034,6 @@ p {
   opacity: 1;
   /* text-decoration: 1px underline #50dcff; */
 }
-
 
 @media screen and (min-width: 768px) {
   .nav__list {
@@ -1052,4 +1051,63 @@ p {
   .nav__burger-menu {
     display: none;
   }
+}
+
+/* SVG */
+
+.great-three-card:hover #cogwheel {
+  transform-origin: 43px 45px;
+  animation: cog-rotate 6s infinite linear;
+}
+
+.great-three-card:hover #white {
+  transform-origin: 111px 110px;
+  animation: white-rotate 6s infinite linear;
+}
+
+.great-three-card:hover #blue {
+  
+  animation: blue-alpha 2s infinite;
+}
+
+
+/* svg:hover #cogwheel {
+  transform-origin: 43px 45px;
+  animation: cog-rotate 6s infinite linear;
+}
+
+svg:hover #white {
+  transform-origin: 111px 110px;
+  animation: white-rotate 6s infinite linear;
+} */
+
+@keyframes cog-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes white-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes blue-alpha {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+  
 }
