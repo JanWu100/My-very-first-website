@@ -1,0 +1,8 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="burger ">
+<rect id="border" x="0.5" y="0.5" width="49" height="49" rx="4.5" stroke="white"/>
+<rect id="line3" x="11" y="32" width="28" height="4" rx="2" fill="white"/>
+<rect id="line2" x="11" y="23" width="28" height="4" rx="2" fill="white"/>
+<rect id="line1" x="11" y="14" width="28" height="4" rx="2" fill="white"/>
+</g>
+</svg>

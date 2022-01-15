@@ -62,12 +62,14 @@ const burger = document.querySelector(".nav__burger-menu");
 
 window.addEventListener("click", function(event) {
   document.querySelector(".nav__list").classList.toggle("collapsed");
+  burger.classList.toggle("burger-active");
 })
 let minWidth = window.matchMedia("(min-width: 768px)")
 
 function myFunction(e) {
   if (e.matches) { 
     document.querySelector(".nav__list").classList.add("collapsed");
+    burger.classList.remove("burger-active");
     
   }
 }
@@ -75,4 +77,5 @@ function myFunction(e) {
 window.addEventListener('resize', function(event){
  myFunction(minWidth);
 });
+
 
