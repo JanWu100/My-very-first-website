@@ -99,3 +99,19 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+
+//// footer ////// 
+const footerButtons = document.querySelectorAll(".btn-collapsible");
+      
+
+footerButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const collapsibleContent = button.closest(".menu__item")
+  .querySelector(".menu__item-list");
+  const buttonRotator = button.closest(".menu__item-header");
+
+    collapsibleContent.classList.toggle("collapsible-content");
+  buttonRotator.classList.toggle("rotate-btn");
+  });
+});
