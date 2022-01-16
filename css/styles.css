@@ -159,21 +159,19 @@ p {
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
+  .grid--footer {
+    grid-template-columns: 1fr 60px 1fr 1fr 1fr;
+  }
 }
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-@media screen and (min-width: 1024px) {
   .grid--great3 {
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .grid--1x5 {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .grid--footer {
+    grid-template-columns: 1fr 120px 1fr 1fr 1fr;
   }
 }
 
@@ -1214,5 +1212,137 @@ p {
 
 /* Footer  */
 
-.footer {
+
+.footer .list {
+  margin: 0;
+}
+
+.footer h2 {
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+.footer .nav__item {
+  text-align: left;
+  padding-left: 0;
+  /* padding-bottom: 2rem; */
+  padding: 0.5rem 0;
+}
+
+.btn-collapsible {
+  margin-top: 2rem;
+}
+
+.btn-collapsible #elipse {
+  fill: none;
+}
+.btn-collapsible #arrow-right {
+  fill: white;
+}
+
+.btn-collapsible:hover #arrow-right {
+  fill: var(--color-primary);
+}
+
+.menu__item {
+  padding: 0 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.205);
+ 
+}
+
+.empty {
+  display: none;
+}
+
+.menu__item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.footer .nav__item a {
+  color: rgb(182, 182, 182);
+
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  
+  transition: color 0.3s;
+}
+.footer .nav__item:last-child {
+  margin-bottom: 2rem;
+}
+
+.footer .nav__item a:hover {
+  color: var(--color-primary);
+  
+}
+
+.btn-collapsible {
+  cursor: pointer;
+  transform: rotate(270deg);
+  transition: transform 0.2s;
+}
+
+.footer .logo {
+  width: 200px;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 6rem;
+  
+}
+
+.footer-logo {
+  text-align: center;
+  border: none;
+  grid-area: 5;
+}
+
+.copy-text {
+  opacity: 0.3;
+  font-size: 1.5rem;
+}
+
+.collapsible-content {
+  max-height: 0;
+  display: none;
+  
+}
+
+.rotate-btn .btn-collapsible {
+  transform: rotate(90deg)
+}
+
+@media screen and (min-width: 768px) {
+  .footer-logo {
+    grid-area: 1;
+  }
+  .footer .nav__item a {
+    font-size: 1.6rem;
+  }
+  .btn-collapsible {
+    display: none;
+  }
+  .footer .logo {
+    margin-top: 0;
+  }
+
+  .menu__item {
+    padding: 0;
+    border: none;
+  }
+  .footer .nav__item:last-child {
+    margin-bottom: 0;
+  }
+  .collapsible-content {
+    max-height: unset;
+    display: unset;
+  }
+  .empty {
+    display: unset;
+  }
+  .footer .list {
+    margin-top: 2rem;
+  }
 }
