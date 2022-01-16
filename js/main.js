@@ -60,46 +60,42 @@ window.addEventListener(
 
 const burger = document.querySelector(".nav__burger-menu");
 
-window.addEventListener("click", function(event) {
+burger.addEventListener("click", function (event) {
   document.querySelector(".nav__list").classList.toggle("collapsed");
   burger.classList.toggle("burger-active");
-})
-let minWidth = window.matchMedia("(min-width: 768px)")
+});
+let minWidth = window.matchMedia("(min-width: 768px)");
 
 function myFunction(e) {
-  if (e.matches) { 
+  if (e.matches) {
     document.querySelector(".nav__list").classList.add("collapsed");
     burger.classList.remove("burger-active");
-    
   }
 }
 
-window.addEventListener('resize', function(event){
- myFunction(minWidth);
+window.addEventListener("resize", function (event) {
+  myFunction(minWidth);
 });
-
 
 ///////// carousel ////////
 
-const buttons = document.querySelectorAll("[data-carousel-button")
+const buttons = document.querySelectorAll("[data-carousel-button");
 
-buttons.forEach(button => {
-  button.addEventListener("click", ()=> {
-
-    
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
 
-    const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
 
     const activeSlide = slides.querySelector("[data-active]");
 
-
     let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-    if (newIndex < 0) newIndex = slides.children.length -1;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
     if (newIndex >= slides.children.length) newIndex = 0;
 
     slides.children[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
-
-  })
-})
+  });
+});
