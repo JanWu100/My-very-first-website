@@ -58,7 +58,7 @@ h4 {
   margin: 0;
   color: var(--color-headings);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -926,11 +926,11 @@ p {
   padding-top: 3rem;
 }
 .qualities .media {
-  width: 44%;
+  width: 80;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .qualities .media {
-    width: 80%;
+    width: 44%;
   }
 }
 
@@ -1090,7 +1090,11 @@ p {
   }
 } */
 
-/* Technologies  */
+/* Learning now  */
+
+#learning-now {
+  padding-top: 5rem;
+}
 
 .technologies__wrapper {
   margin-top: 2rem;
