@@ -175,14 +175,6 @@ p {
   display: grid;
 }
 
-.technologies__wrapper {
-  margin-top: 8rem;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 @media screen and (min-width: 768px) {
   .container {
     padding-inline: 50px;
@@ -195,7 +187,7 @@ p {
     align-items: center;
   }
   .grid--footer {
-    grid-template-columns: 1fr 220px min-content ;
+    grid-template-columns: 1fr 220px min-content;
   }
 }
 
@@ -206,9 +198,7 @@ p {
   .grid--great3 {
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
   }
-  
 }
-
 
 /* Lists  */
 
@@ -234,8 +224,8 @@ p {
   max-height: 100px;
 }
 .card-wrapper {
-  gap: 5rem 2rem;
-  padding: 6rem 0;
+  gap: 3rem 2rem;
+  padding: 0;
 }
 
 .card--premium {
@@ -256,6 +246,10 @@ p {
   .card--premium {
     transform: scale(1.05);
     transition: transform 0.3s;
+  }
+  .card-wrapper {
+    gap: 5rem 2rem;
+    padding: 6rem 0;
   }
 }
 
@@ -433,7 +427,6 @@ p {
   }
 }
 
-
 /* Hero */
 
 .hero__body {
@@ -585,43 +578,86 @@ p {
   }
 }
 
-
 /* great3 cards */
 
 .great3-card {
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
   justify-self: center;
-  margin: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 3rem;
   transition: transform 0.3s;
+}
+
+.great3-card:nth-of-type(2n){
+  flex-direction: row-reverse;
+}
+
+.great3-card:nth-of-type(2n) .great3__body{
+  text-align: right;
+
+}
+
+.great3__body {
+  text-align: left;
+}
+
+.great3__image {
+  width: 180px;
 }
 
 .great3-card:hover {
   transform: scale(1.05);
 }
 
-.great3-card__img {
-  margin-bottom: 3rem;
+.great3__image :first-child {
+  margin-bottom: 0;
 }
-.great3-card svg {
-  margin-bottom: 3rem;
-  height: 170px;
+
+.great3__body p {
+  margin-bottom: 0;
 }
 
 .great3-card__arrow {
   animation: blue-alpha 2s infinite;
-  height: 40px;
+  height: 30px;
   justify-self: center;
   transform: rotate(90deg);
+  margin: 3rem 0;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px){
+  .great3-card {
+    display: unset;
+    max-width: 80%;
+    margin-top: 3rem;
+    
+  } 
+  .great3__body {
+    text-align: center;
+  }
+ 
+  .great3__image {
+    width: unset;
+    height: 200px;
+  }
+
   .great3-card__arrow {
     margin-top: 100px;
     transform: rotate(0);
   }
   .great3-card {
+    margin: 4rem 0;
     max-width: 260px;
+  }
+  .great3__image :first-child {
+    margin-bottom: 3rem;
+  }
+  .great3-card:nth-of-type(2n) .great3__body{
+    text-align: center;
+  
   }
 }
 
@@ -736,7 +772,7 @@ p {
 .carousel {
   position: relative;
   display: flex;
-  margin: 8rem auto 0;
+  margin: 4rem auto 0;
   height: 600px;
   max-width: 400px;
 }
@@ -838,6 +874,7 @@ p {
   .carousel {
     max-width: 1100px;
     height: 400px;
+    margin: 6rem auto 0;
   }
   .slide p {
     margin: 0;
@@ -871,7 +908,8 @@ p {
   column-gap: 50px;
   justify-content: center;
   max-width: 1240px;
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 }
 .qualities .media {
   width: 44%;
@@ -1038,6 +1076,22 @@ p {
   }
 } */
 
+/* Technologies  */
+
+.technologies__wrapper {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .technologies__wrapper {
+    margin-top: 4rem;
+  }
+}
+
 /* CTA  */
 
 .cta {
@@ -1046,9 +1100,9 @@ p {
   display: flex;
   padding: 5rem 3rem;
   align-items: center;
- 
+
   flex-direction: column;
-    text-align: center;
+  text-align: center;
   margin: 0 auto;
   width: 90%;
 }
@@ -1056,8 +1110,6 @@ p {
 #cta-section {
   padding: 2rem 0;
 }
-
-
 
 .cta h2 {
   color: var(--color-background);
@@ -1067,21 +1119,17 @@ p {
   font-weight: 700;
 }
 
-
-
 @media screen and (min-width: 1024px) {
   .cta {
     flex-direction: row;
     text-align: left;
     max-width: 1260px;
     padding: 5rem;
-    
   }
   .cta__body {
     padding-right: 5rem;
   }
 }
-
 
 /* SVG */
 
@@ -1240,7 +1288,6 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.205);
 }
 
-
 .menu__item-header {
   display: flex;
   justify-content: space-between;
@@ -1318,13 +1365,12 @@ p {
   }
   .footer .nav__item:last-child {
     margin-bottom: 0;
-   
   }
   .collapsible-content {
     max-height: unset;
     display: unset;
   }
-  
+
   .footer .list {
     margin-top: 0;
   }
