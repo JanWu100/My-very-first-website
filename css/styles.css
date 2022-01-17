@@ -195,7 +195,7 @@ p {
     align-items: center;
   }
   .grid--footer {
-    grid-template-columns: 1fr 60px 1fr 1fr 0.7fr;
+    grid-template-columns: 1fr 220px min-content ;
   }
 }
 
@@ -206,9 +206,7 @@ p {
   .grid--great3 {
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
   }
-  .grid--footer {
-    grid-template-columns: 1fr 120px 1fr 1fr 0.7fr;
-  }
+  
 }
 
 
@@ -1047,10 +1045,12 @@ p {
   background: var(--color-primary);
   display: flex;
   padding: 5rem;
-  align-items: center;
-  flex-direction: row;
-  width: 90%;
+  /* align-items: center; */
+ 
+  flex-direction: column;
+    text-align: center;
   margin: 0 auto;
+  width: 90%;
 }
 
 #cta-section {
@@ -1059,16 +1059,21 @@ p {
 
 .cta__body {
   padding-right: 5rem;
+  
 }
 
 .cta h2 {
   color: var(--color-background);
 }
 
-@media screen and (max-width: 1024px) {
+
+
+@media screen and (min-width: 1024px) {
   .cta {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
+    max-width: 1260px;
+    
   }
   .cta__body {
     padding-right: 0;
@@ -1196,7 +1201,7 @@ p {
 /* Footer  */
 .footer {
   background: var(--color-background-lighter);
-  padding-inline: 4rem;
+  padding-inline: 2rem;
 }
 
 .footer .list {
@@ -1233,9 +1238,6 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.205);
 }
 
-.empty {
-  display: none;
-}
 
 .menu__item-header {
   display: flex;
@@ -1267,16 +1269,14 @@ p {
 }
 
 .footer .logo {
-  width: 200px;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 6rem;
+  width: 160px;
+  /* padding: 2rem; */
+  margin: 6rem;
 }
 
 .footer-logo {
   text-align: center;
   border: none;
-  grid-area: 5;
 }
 
 .copy-text {
@@ -1299,15 +1299,16 @@ p {
   }
   .footer-logo {
     grid-area: 1;
+    text-align: left;
   }
   .footer .nav__item a {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   .btn-collapsible {
     display: none;
   }
   .footer .logo {
-    margin-top: 0;
+    margin: 2rem 0 0 2rem;
   }
 
   .menu__item {
@@ -1315,15 +1316,17 @@ p {
   }
   .footer .nav__item:last-child {
     margin-bottom: 0;
+   
   }
   .collapsible-content {
     max-height: unset;
     display: unset;
   }
-  .empty {
-    display: unset;
-  }
+  
   .footer .list {
-    margin-top: 2rem;
+    margin-top: 0;
+  }
+  .footer h2 {
+    padding-right: 2rem;
   }
 }
