@@ -587,7 +587,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: start;
-  column-gap: 3rem;
+  column-gap: 2rem;
   transition: transform 0.3s;
 }
 
@@ -604,9 +604,7 @@ p {
   text-align: left;
 }
 
-.great3__image {
-  width: 180px;
-}
+
 
 .great3-card:hover {
   transform: scale(1.05);
@@ -614,10 +612,12 @@ p {
 
 .great3__image :first-child {
   margin-bottom: 0;
+  width: 120px;
 }
 
 .great3__body p {
   margin-bottom: 0;
+  font-size: 1.6rem
 }
 
 .great3-card__arrow {
@@ -626,6 +626,17 @@ p {
   justify-self: center;
   transform: rotate(90deg);
   margin: 3rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .great3__image :first-child {
+    margin-bottom: 0;
+    width: 160px;
+  }
+  .great3-card {
+  
+  column-gap: 4rem;
+  }
 }
 
 @media screen and (min-width: 1024px){
@@ -643,6 +654,7 @@ p {
     width: unset;
     height: 200px;
   }
+  
 
   .great3-card__arrow {
     margin-top: 100px;
@@ -653,6 +665,7 @@ p {
     max-width: 260px;
   }
   .great3__image :first-child {
+    
     margin-bottom: 3rem;
   }
   .great3-card:nth-of-type(2n) .great3__body{
