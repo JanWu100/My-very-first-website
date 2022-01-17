@@ -998,7 +998,11 @@ p {
   align-items: center;
   flex-direction: row;
   width: 90%;
-  margin: 2rem auto;
+  margin: 0 auto;
+}
+
+#cta-section {
+  padding: 2rem 0;
 }
 
 .cta__body {
@@ -1092,6 +1096,22 @@ p {
 
 /* SVG */
 
+@media screen and (max-width: 765px) {
+  .great3-card #cogwheel {
+    transform-origin: 43px 45px;
+    animation: cog-rotate 6s infinite linear;
+  }
+
+  .great3-card #white {
+    transform-origin: 111px 110px;
+    animation: white-rotate 6s infinite linear;
+  }
+
+  .great3-card #blue {
+    animation: blue-alpha 4s infinite;
+  }
+}
+
 .great3-card:hover #cogwheel {
   transform-origin: 43px 45px;
   animation: cog-rotate 6s infinite linear;
@@ -1104,6 +1124,21 @@ p {
 
 .great3-card:hover #blue {
   animation: blue-alpha 4s infinite;
+}
+
+#cogwheel {
+  fill: url(#Gradient1);
+}
+.stop1 {
+  stop-color: rgb(61, 61, 61);
+}
+.stop2 {
+  stop-color: rgb(66, 66, 66);
+  stop-opacity: 1;
+}
+
+.stop3 {
+  stop-color: rgb(231, 231, 231);
 }
 
 @keyframes cog-rotate {
