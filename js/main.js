@@ -230,7 +230,7 @@ function nextSlide() {
   let slides = document.querySelector("[data-slides]");
   const activeSlide = slides.querySelector("[data-active]");
   let newIndex = [...slides.children].indexOf(activeSlide) + 1;
-
+  allDots = document.querySelectorAll(".carousel__dot");
   if (newIndex < 0) newIndex = slides.children.length - 1;
   if (newIndex >= slides.children.length) newIndex = 0;
 
@@ -269,6 +269,7 @@ addSlide.addEventListener("click", () => {
   }
 
   createCarousel();
+  timer();
 });
 
 removeSlide.addEventListener("click", () => {
