@@ -33,7 +33,6 @@
           height="50"
           viewBox="0 0 50 50"
           fill="none"
-          
         >
           <g id="burger ">
             <rect
@@ -194,12 +193,7 @@
         />
         <article class="great3-card">
           <div class="great3__image">
-            <svg
-              
-              viewBox="0 0 164 164"
-              fill="none"
-              
-            >
+            <svg viewBox="0 0 164 164" fill="none">
               <defs>
                 <linearGradient id="Gradient1" x1="0" x2="1" y1="1" y2="0">
                   <stop class="stop1" offset="0%" />
@@ -358,6 +352,12 @@
             voluptatum veritatis? Ipsum est modi aliquam temporibus possimus
             porro inventore ratione blanditiis.
           </p>
+          <div class="buttons">
+            <button class="btn btn--primary remove">remove</button>
+            <button type="submit" class="btn btn--primary add">Add</button>
+          </div>
+         
+
           <div class="carousel" data-carousel>
             <svg
               data-carousel-button="next"
@@ -366,7 +366,6 @@
               height="30"
               viewBox="0 0 30 30"
               fill="none"
-              
             >
               <g id="next-btn">
                 <circle id="elipse" cx="15" cy="15" r="15" fill="#50DCFF" />
@@ -386,7 +385,6 @@
               height="30"
               viewBox="0 0 30 30"
               fill="none"
-              
             >
               <g id="prev-btn">
                 <circle
@@ -406,91 +404,10 @@
                 />
               </g>
             </svg>
-            <div data-slides>
-              <div class="slide" data-active>
-                <div class="slide__image">
-                  <img src="/images/man_in_glasses.jpg" alt="" srcset="" />
-                </div>
-                <div class="slide__body">
-                  <h3>The man</h3>
-                  <p>
-                    Photo by
-                    <a
-                      target="blank"
-                      href="https://www.pexels.com/@ashish-sharma-266379?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
-                      >ASHISH SHARMA</a
-                    >
-                    from
-                    <a
-                      target="blank"
-                      href="https://www.pexels.com/photo/ma-in-black-aviator-sunglasses-with-purple-smoke-917594/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
-                      >Pexels</a
-                    >
-                  </p>
-                  <div class="dot-wrapper">
-                    <div class="carousel__dot dot--active"></div>
-                    <div class="carousel__dot"></div>
-                    <div class="carousel__dot"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="slide">
-                <div class="slide__image">
-                  <img src="/images/balcony.png" alt="" srcset="" />
-                </div>
-                <div class="slide__body">
-                  <h3>the second</h3>
-                  <p>
-                    Photo by
-                    <a
-                      target="blank"
-                      href="https://unsplash.com/@annaskrzynska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >Anna Skrzyńska</a
-                    >
-                    on
-                    <a
-                      target="blank"
-                      href="https://unsplash.com/t/wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-                      >Unsplash</a
-                    >
-                  </p>
-                  <div class="dot-wrapper">
-                    <div class="carousel__dot"></div>
-                    <div class="carousel__dot dot--active"></div>
-                    <div class="carousel__dot"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="slide">
-                <div class="slide__image">
-                  <img src="/images/texture.jpg" alt="" srcset="" />
-                </div>
-                <div class="slide__body">
-                  <h3>the third</h3>
-                  <p>
-                    Photo by
-                    <a
-                      target="blank"
-                      href="https://www.pexels.com/@anniroenkae?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
-                      >Anni Roenkae</a
-                    >
-                    from
-                    <a
-                      target="blank"
-                      href="https://www.pexels.com/photo/photo-of-acrylic-paint-2832432/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
-                      >Pexels</a
-                    >
-                  </p>
-                  <div class="dot-wrapper">
-                    <div class="carousel__dot"></div>
-                    <div class="carousel__dot"></div>
-                    <div class="carousel__dot dot--active"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div data-slides></div>
           </div>
         </div>
+        <div class="dot__wrapper"></div>
       </section>
       <section id="qualities">
         <div class="container qualities">
@@ -730,7 +647,6 @@
               height="30"
               viewBox="0 0 30 30"
               fill="none"
-              
             >
               <g id="btn-collapsible">
                 <circle id="elipse" cx="15" cy="15" r="15" fill="#50DCFF" />
@@ -773,7 +689,6 @@
               height="30"
               viewBox="0 0 30 30"
               fill="none"
-              
             >
               <g id="btn-collapsible ">
                 <circle id="elipse" cx="15" cy="15" r="15" fill="#50DCFF" />
