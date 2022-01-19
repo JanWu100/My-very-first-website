@@ -279,7 +279,8 @@ removeSlide.addEventListener("click", () => {
   dots = [];
 
   if (startInput.length > 2) {
-    currentSlide = 0;
+    if (currentSlide === allSlides.length-1) {currentSlide--};
+    // currentSlide = 0;
     startInput.pop();
     createCarousel();
     startTimer();
