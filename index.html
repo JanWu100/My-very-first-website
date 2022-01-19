@@ -17,8 +17,7 @@
       src="https://kit.fontawesome.com/e75f0e5d64.js"
       crossorigin="anonymous"
     ></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   
   </head>
   <body>
     <header>
@@ -411,7 +410,7 @@
 
         <div class="form">
           <div class="form-item">
-            <input class="title-input" type="text" placeholder="Title" />
+            <input class="title-input" type="text" placeholder="Title" onkeyup="allowAlphaNumericSpace(this)" />
           </div>
     
           <div class="form-item">
@@ -419,6 +418,7 @@
               class="text-input"
               type="text"
               placeholder="Body text"
+              onkeyup="allowAlphaNumericSpace(this)"
             ></textarea>
           </div>
 

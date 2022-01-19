@@ -26,7 +26,7 @@ window.addEventListener("scroll", function (e) {
 });
 
 ///////////////////////
-AOS.init();
+
 //////////////////////
 
 ///////////////counter on viewport//////////////////////
@@ -222,6 +222,10 @@ function nextSlide() {
   allDots[newIndex].dataset.active = true;
 
   currentSlide = newIndex;
+}
+
+function allowAlphaNumericSpace(thisInput) {
+  thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 ]/).join('');
 }
 
 buttons.forEach((button) => {
