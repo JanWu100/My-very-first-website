@@ -224,8 +224,8 @@ function nextSlide() {
   currentSlide = newIndex;
 }
 
-function allowAlphaNumericSpace(thisInput) {
-  thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 ]/).join('');
+function inputValidation(thisInput) {
+  thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 .!?,]/).join('');
 }
 
 buttons.forEach((button) => {
