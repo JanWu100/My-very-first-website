@@ -206,15 +206,7 @@ for ( let i = 0 ; i < allDots.length ; i++){
       })
 }
 
-// allDots.forEach((dot) => {
-//   dot.addEventListener("click", ()=> {
-// console.log(dot);
-//     // slides.children[newIndex].dataset.active = true;
-//     // delete activeSlide.dataset.active;
 
-
-//   })
-// });
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -300,11 +292,9 @@ addSlide.addEventListener("click", () => {
       image: `https://source.unsplash.com/random?sig=${Math.floor(
         Math.random() * 500
       )}`,
-      title:
-        `Generic title number ${addedSlideCount}`,
-      bodyText:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis unde, animi architecto repellat dolorem doloribus est fuga vero praesentium fugiat."
-    });
+      title: document.querySelector(".title-input").value === "" ? `Generic title number ${addedSlideCount}` : document.querySelector(".title-input").value,
+      bodyText: document.querySelector(".text-input").value === "" ? "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis unde, animi architecto repellat dolorem doloribus est fuga vero praesentium fugiat." : document.querySelector(".text-input").value,
+     });
     
   }
 
