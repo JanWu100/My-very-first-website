@@ -130,14 +130,20 @@ let startInput = [
   },
 ];
 
+const buttons = document.querySelectorAll("[data-carousel-button");
+const addSlide = document.querySelector(".btn-add");
+const removeSlide = document.querySelector(".btn-remove");
+
 let timeout;
 let dots = [];
 let slides = [];
-let currentSlide = 0;
 let allDots;
 let allSlides;
+let currentSlide = 0;
+let addedSlideCount = 0;
+
 createCarousel();
-timer();
+startTimer();
 
 function createCarousel() {
   for (let i = 0; i < startInput.length; i++) {
@@ -147,35 +153,32 @@ function createCarousel() {
       dots.push('<div class="carousel__dot"></div>');
     }
   }
-
   document.querySelector(".dot__wrapper").innerHTML = dots.join("");
   for (let i = 0; i < startInput.length; i++) {
     if (i === currentSlide) {
-      slides.push(`<div class="slide" data-active>
-    <div class="slide__image">
-      <img src="${startInput[i].image}" alt="" srcset="" />
-    </div>
-    
-    <div class="slide__body">
-      <h3>${startInput[i].title}</h3>
-      <p>
-      ${startInput[i].bodyText}
-      </p>
-    </div>
-    </div>`);
+      slides.push(` <div class="slide" data-active>
+                      <div class="slide__image">
+                        <img src="${startInput[i].image}" alt="" srcset="" />
+                      </div>
+                      <div class="slide__body">
+                        <h3>${startInput[i].title}</h3>
+                        <p>
+                        ${startInput[i].bodyText}
+                        </p>
+                      </div>
+                    </div>`);
     } else {
-      slides.push(`<div class="slide">
-    <div class="slide__image">
-      <img src="${startInput[i].image}" alt="" srcset="" />
-    </div>
-    
-    <div class="slide__body">
-      <h3>${startInput[i].title}</h3>
-      <p>
-      ${startInput[i].bodyText}
-      </p>
-    </div>
-    </div>`);
+      slides.push(` <div class="slide">
+                      <div class="slide__image">
+                        <img src="${startInput[i].image}" alt="" srcset="" />
+                      </div>
+                      <div class="slide__body">
+                        <h3>${startInput[i].title}</h3>
+                        <p>
+                        ${startInput[i].bodyText}
+                        </p>
+                      </div>
+                    </div>`);
     }
   }
   document.querySelector("[data-slides]").innerHTML = slides.join("");
@@ -187,60 +190,18 @@ function createCarousel() {
 function makeDotsInteractive() {
   for (let i = 0; i < allDots.length; i++) {
     allDots[i].addEventListener("click", () => {
-    
-
       if (i !== currentSlide) {
-        delete allDots[currentSlide].dataset.active;
-        delete allSlides[currentSlide].dataset.active;
-
-        allDots[i].dataset.active = true;
-        allSlides[i].dataset.active = true;
-
-        currentSlide = i;
-      }
-     
+                                delete allDots[currentSlide].dataset.active;
+                                delete allSlides[currentSlide].dataset.active;
+                                allDots[i].dataset.active = true;
+                                allSlides[i].dataset.active = true;
+                                currentSlide = i;
+                              }
     });
   }
 }
 
-const buttons = document.querySelectorAll("[data-carousel-button");
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    timer();
-    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-    const slides = button
-      .closest("[data-carousel]")
-      .querySelector("[data-slides]");
-    const activeSlide = slides.querySelector("[data-active]");
-    allDots = document.querySelectorAll(".carousel__dot");
-    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-
-    if (newIndex < 0) newIndex = slides.children.length - 1;
-    if (newIndex >= slides.children.length) newIndex = 0;
-
-    slides.children[newIndex].dataset.active = true;
-    delete activeSlide.dataset.active;
-
-    if (offset === 1) {
-      allDots[newIndex].dataset.active = true;
-      if (newIndex === 0) {
-        delete allDots[slides.children.length - 1].dataset.active;
-      } else {
-        delete allDots[newIndex - 1].dataset.active;
-      }
-    } else {
-      allDots[newIndex].dataset.active = true;
-      if (newIndex === slides.children.length - 1) {
-        delete allDots[0].dataset.active;
-      } else {
-        delete allDots[newIndex + 1].dataset.active;
-      }
-    }
-    currentSlide = newIndex;
-  });
-});
-
-function timer() {
+function startTimer() {
   clearTimeout(timeout);
   timeout = setInterval(function () {
     nextSlide();
@@ -248,35 +209,46 @@ function timer() {
 }
 
 function nextSlide() {
-  let slides = document.querySelector("[data-slides]");
-  const activeSlide = slides.querySelector("[data-active]");
-  let newIndex = [...slides.children].indexOf(activeSlide) + 1;
 
-  allDots = document.querySelectorAll(".carousel__dot");
-  if (newIndex < 0) newIndex = slides.children.length - 1;
-  if (newIndex >= slides.children.length) newIndex = 0;
+  let newIndex = currentSlide + 1;
 
-  slides.children[newIndex].dataset.active = true;
-  delete activeSlide.dataset.active;
+  if (newIndex < 0) newIndex = allSlides.length - 1;
+  if (newIndex >= allSlides.length) newIndex = 0;
 
+  delete allDots[currentSlide].dataset.active;
+  delete allSlides[currentSlide].dataset.active;
+
+  allSlides[newIndex].dataset.active = true;
   allDots[newIndex].dataset.active = true;
-  if (newIndex === 0) {
-    delete allDots[slides.children.length - 1].dataset.active;
-  } else {
-    delete allDots[newIndex - 1].dataset.active;
-  }
+
   currentSlide = newIndex;
 }
 
-let addSlide = document.querySelector(".add");
-let removeSlide = document.querySelector(".remove");
-let addedSlideCount = 0;
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    startTimer();
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    let newIndex = currentSlide + offset;
+
+    if (newIndex < 0) newIndex = allSlides.length - 1;
+    if (newIndex >= allSlides.length) newIndex = 0;
+
+    delete allDots[currentSlide].dataset.active;
+    delete allSlides[currentSlide].dataset.active;
+
+    allSlides[newIndex].dataset.active = true;
+    allDots[newIndex].dataset.active = true;
+
+    currentSlide = newIndex;
+  });
+});
+
 addSlide.addEventListener("click", () => {
   slides = [];
   dots = [];
 
   addedSlideCount++;
-  if (startInput.length > 10) {
+  if (startInput.length > 15) {
     alert("I think it is enough slides for one Carousel ;)");
   } else {
     currentSlide = startInput.length;
@@ -294,9 +266,8 @@ addSlide.addEventListener("click", () => {
           : document.querySelector(".text-input").value,
     });
   }
-
   createCarousel();
-  timer();
+  startTimer();
 });
 
 removeSlide.addEventListener("click", () => {
@@ -307,6 +278,7 @@ removeSlide.addEventListener("click", () => {
     currentSlide = 0;
     startInput.pop();
     createCarousel();
+    startTimer();
   } else {
     alert("We need at least 2 slides to call it a Carousel ;)");
   }
