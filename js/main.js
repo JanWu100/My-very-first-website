@@ -83,8 +83,7 @@ let startInput = [
   {
     image: "/images/man_in_glasses.jpg",
     title: "the man",
-    bodyText:
-      `Photo by
+    bodyText: `Photo by
       <a
         target="blank"
         href="https://www.pexels.com/@ashish-sharma-266379?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
@@ -100,8 +99,7 @@ let startInput = [
   {
     image: "/images/balcony.png",
     title: "the second",
-    bodyText:
-      `Photo by
+    bodyText: `Photo by
       <a
         target="blank"
         href="https://unsplash.com/@annaskrzynska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -136,8 +134,10 @@ let timeout;
 let dots = [];
 let slides = [];
 let currentSlide = 0;
+let allDots;
+let allSlides;
 createCarousel();
-// timer();
+timer();
 
 function createCarousel() {
   for (let i = 0; i < startInput.length; i++) {
@@ -179,38 +179,34 @@ function createCarousel() {
     }
   }
   document.querySelector("[data-slides]").innerHTML = slides.join("");
+  allDots = document.querySelectorAll(".carousel__dot");
+  allSlides = document.querySelectorAll(".slide");
+  makeDotsInteractive();
+}
+
+function makeDotsInteractive() {
+  for (let i = 0; i < allDots.length; i++) {
+    allDots[i].addEventListener("click", () => {
+    
+
+      if (i !== currentSlide) {
+        delete allDots[currentSlide].dataset.active;
+        delete allSlides[currentSlide].dataset.active;
+
+        allDots[i].dataset.active = true;
+        allSlides[i].dataset.active = true;
+
+        currentSlide = i;
+      }
+     
+    });
+  }
 }
 
 const buttons = document.querySelectorAll("[data-carousel-button");
-let allDots = document.querySelectorAll(".carousel__dot");
-let allSlides = document.querySelectorAll(".slide")
-for ( let i = 0 ; i < allDots.length ; i++){
-  allDots[i].addEventListener("click", ()=> {
-  //   let slidesToCheck = document.querySelector("[data-slides]");
-  // let activeSlide = allSlides.querySelector("[data-active]");
-
-    if (i === currentSlide){
-      console.log("NO");
-       }
-       else { console.log("current i = " + i)
-      console.log("current slide pre= " + currentSlide)}
-       delete allDots[currentSlide].dataset.active;
-       allDots[i].dataset.active = true;
-       delete allSlides[currentSlide].dataset.active;
-
-       allSlides[i].dataset.active = true;
-       currentSlide = i;
-       console.log("current slide after= " + currentSlide)
-        
-    
-      })
-}
-
-
-
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    // timer();
+    timer();
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
     const slides = button
       .closest("[data-carousel]")
@@ -218,7 +214,6 @@ buttons.forEach((button) => {
     const activeSlide = slides.querySelector("[data-active]");
     allDots = document.querySelectorAll(".carousel__dot");
     let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-    
 
     if (newIndex < 0) newIndex = slides.children.length - 1;
     if (newIndex >= slides.children.length) newIndex = 0;
@@ -228,20 +223,20 @@ buttons.forEach((button) => {
 
     if (offset === 1) {
       allDots[newIndex].dataset.active = true;
-                      if (newIndex === 0) {
-                       delete allDots[slides.children.length - 1].dataset.active;
-                      } else {
-                      delete allDots[newIndex - 1].dataset.active;
-                      }
+      if (newIndex === 0) {
+        delete allDots[slides.children.length - 1].dataset.active;
+      } else {
+        delete allDots[newIndex - 1].dataset.active;
+      }
     } else {
       allDots[newIndex].dataset.active = true;
-            if (newIndex === slides.children.length - 1) {
-              delete allDots[0].dataset.active;
-            } else {
-            delete allDots[newIndex + 1].dataset.active;
-            }
-          }
-          currentSlide = newIndex;
+      if (newIndex === slides.children.length - 1) {
+        delete allDots[0].dataset.active;
+      } else {
+        delete allDots[newIndex + 1].dataset.active;
+      }
+    }
+    currentSlide = newIndex;
   });
 });
 
@@ -256,7 +251,7 @@ function nextSlide() {
   let slides = document.querySelector("[data-slides]");
   const activeSlide = slides.querySelector("[data-active]");
   let newIndex = [...slides.children].indexOf(activeSlide) + 1;
-  
+
   allDots = document.querySelectorAll(".carousel__dot");
   if (newIndex < 0) newIndex = slides.children.length - 1;
   if (newIndex >= slides.children.length) newIndex = 0;
@@ -273,16 +268,13 @@ function nextSlide() {
   currentSlide = newIndex;
 }
 
-
-
-
 let addSlide = document.querySelector(".add");
 let removeSlide = document.querySelector(".remove");
 let addedSlideCount = 0;
 addSlide.addEventListener("click", () => {
   slides = [];
   dots = [];
- 
+
   addedSlideCount++;
   if (startInput.length > 10) {
     alert("I think it is enough slides for one Carousel ;)");
@@ -292,20 +284,25 @@ addSlide.addEventListener("click", () => {
       image: `https://source.unsplash.com/random?sig=${Math.floor(
         Math.random() * 500
       )}`,
-      title: document.querySelector(".title-input").value === "" ? `Generic title number ${addedSlideCount}` : document.querySelector(".title-input").value,
-      bodyText: document.querySelector(".text-input").value === "" ? "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis unde, animi architecto repellat dolorem doloribus est fuga vero praesentium fugiat." : document.querySelector(".text-input").value,
-     });
-    
+      title:
+        document.querySelector(".title-input").value === ""
+          ? `Generic title number ${addedSlideCount}`
+          : document.querySelector(".title-input").value,
+      bodyText:
+        document.querySelector(".text-input").value === ""
+          ? "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis unde, animi architecto repellat dolorem doloribus est fuga vero praesentium fugiat."
+          : document.querySelector(".text-input").value,
+    });
   }
 
   createCarousel();
-  // timer();
+  timer();
 });
 
 removeSlide.addEventListener("click", () => {
   slides = [];
   dots = [];
-  
+
   if (startInput.length > 2) {
     currentSlide = 0;
     startInput.pop();
@@ -315,20 +312,17 @@ removeSlide.addEventListener("click", () => {
   }
 });
 
-
-
-
-//// footer ////// 
+//// footer //////
 const footerButtons = document.querySelectorAll(".btn-collapsible");
-      
 
 footerButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const collapsibleContent = button.closest(".menu__item")
-  .querySelector(".menu__item-list");
-  const buttonRotator = button.closest(".menu__item-header");
+    const collapsibleContent = button
+      .closest(".menu__item")
+      .querySelector(".menu__item-list");
+    const buttonRotator = button.closest(".menu__item-header");
 
     collapsibleContent.classList.toggle("collapsible-content");
-  buttonRotator.classList.toggle("rotate-btn");
+    buttonRotator.classList.toggle("rotate-btn");
   });
 });
