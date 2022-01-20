@@ -1,11 +1,12 @@
 :root {
-  --color-primary: #50dcff;
+  --color-primary: rgb(178, 196, 17);
+  /* --color-primary: #50dcff; */
+
   --color-body: #d3d3d3;
   --color-headings: #ffffff;
   --color-background: rgb(21, 21, 21);
   --color-background-lighter: #212121;
   --border-radius: 6px;
-  --light-shadow: 0px 0px 10px 3px rgba(34, 255, 255, 0.2);
   --gradient-primary: linear-gradient(
     90deg,
     rgba(80, 220, 255, 0) 0%,
@@ -223,6 +224,9 @@ p {
   right: 8%;
   max-height: 100px;
 }
+#hot-deal #bg {
+  fill: var(--color-primary);
+}
 .card-wrapper {
   gap: 3rem 2rem;
   padding: 0;
@@ -316,7 +320,6 @@ p {
 }
 .btn:focus-visible {
   color: var(--color-headings);
-  box-shadow: var(--light-shadow);
 }
 
 .btn--primary {
@@ -328,7 +331,6 @@ p {
 .btn--primary:hover {
   background: var(--color-primary);
   color: var(--color-background);
-  box-shadow: var(--light-shadow);
 }
 
 .btn--black {
@@ -441,8 +443,33 @@ p {
 .hero-image {
   position: relative;
   overflow: hidden;
+ align-content: center;
+ text-align: center;
   width: 100%;
   height: 100%;
+}
+
+
+.hero-svg {
+  width: 100%;
+  height: 100%;
+}
+
+#hero-main #elipse,
+#hero-main #cross,
+#hero-main #top {
+  fill: var(--color-primary);
+}
+#hero-main #dots {
+  fill: var(--color-background-lighter);
+}
+
+#hero-main #square {
+  animation: bounce 3s infinite;
+}
+
+#hero-main #cross {
+  transform-origin: 80.5% 28%;
 }
 
 @media screen and (min-width: 768px) {
@@ -456,6 +483,27 @@ p {
 
   #hero.container {
     padding-inline: 0;
+  }
+  .hero-image {
+    align-self: center;
+    align-items: center;
+
+  }
+  .hero-svg {
+    
+    width: unset;
+    height: 80%;
+    margin: 10% 0;
+    
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero-svg {
+    
+    width: unset;
+    height: 100%;
+    margin: 0;
+    
   }
 }
 
@@ -472,51 +520,6 @@ p {
   }
 }
 
-/* Parallax */
-
-.z2 {
-  width: 100%;
-}
-.z0,
-.z1,
-.z4 {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-}
-.z4 {
-  left: 0%;
-  transform-origin: 86% 28%;
-}
-.z1 {
-  animation: bounce 2s infinite;
-}
-
-@media screen and (min-width: 768px) {
-  .z0,
-  .z1,
-  .z2,
-  .z4 {
-    position: absolute;
-    height: 100%;
-    width: unset;
-    max-height: 600px;
-    top: 8%;
-
-    margin-left: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .z0,
-  .z1,
-  .z2,
-  .z4 {
-    max-height: unset;
-    top: unset;
-    left: 10%;
-  }
-}
 
 @keyframes bounce {
   0% {
@@ -622,10 +625,15 @@ p {
 
 .great3-card__arrow {
   animation: blue-alpha 2s infinite;
+  
   height: 30px;
   justify-self: center;
   transform: rotate(90deg);
   margin: 3rem 0;
+}
+
+.great3-card__arrow #arrow {
+  fill: var(--color-primary);
 }
 
 @media screen and (min-width: 768px) {
@@ -800,6 +808,11 @@ p {
   z-index: 2;
   top: 50%;
   cursor: pointer;
+}
+
+#next-btn #elipse,
+#prev-btn #elipse {
+  fill: var(--color-primary);
 }
 
 #arrow-right,
@@ -1176,6 +1189,9 @@ p {
   .great3-card #blue {
     animation: blue-alpha 4s infinite;
   }
+}
+#JS_gfx #blue {
+  fill: var(--color-primary);
 }
 
 .great3-card:hover #cogwheel {

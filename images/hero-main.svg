@@ -1,0 +1,12 @@
+<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hero-main">
+<rect id="square" x="237.071" y="17.0712" width="447.858" height="447.858" transform="rotate(30 237.071 17.0712)" fill="url(#paint0_radial_15_119)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_15_119" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(418.393 -76.7278) rotate(74.9158) scale(473.97)">
+<stop stop-color="white"/>
+<stop offset="0.0001" stop-color="#737373"/>
+<stop offset="1" stop-color="#212121"/>
+</radialGradient>
+</defs>
+</svg>
