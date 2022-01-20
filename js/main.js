@@ -330,3 +330,27 @@ function showBackToTopBtn() {
     topButton.classList.remove("show");
   }
 };
+
+// range tool  // // / 
+
+let btnRange = document.querySelector(".range-tool__wrapper-btn");
+
+btnRange.addEventListener("click", ()=>{
+document.querySelector(".range-tool__wrapper").classList.toggle("range-visible")
+
+} )
+
+
+function changeColor(){
+  let red = document.getElementById("rangeRed").value;
+  let green = document.getElementById("rangeGreen").value;
+  let blue = document.getElementById("rangeBlue").value;
+
+  let color = `rgb(${red},${green},${blue})`
+  document.documentElement.style.setProperty('--color-primary', color);
+
+}
+
+document.getElementById("rangeRed").addEventListener("input", changeColor);
+document.getElementById("rangeGreen").addEventListener("input", changeColor);
+document.getElementById("rangeBlue").addEventListener("input", changeColor);

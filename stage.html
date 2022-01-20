@@ -20,11 +20,32 @@
   </head>
   <body style="background: rgb(34, 34, 34)">
     <styles> </styles>
-
-    
+    <div class="range-tool__wrapper">
+      <div class="range-tool__label">Choose your color:</div>
+      <div class="range-tool__container"><input type="range" name="" id="rangeRed" value="178" min="0" max="255"></div>
+      <div class="range-tool__container"><input type="range" name="" id="rangeGreen" value="196" min="0" max="255"></div>
+      <div class="range-tool__container"><input type="range" name="" id="rangeBlue" value="17" min="0" max="255"></div>
+    </div>
+   
 
     <script>
    
+      function changeColor(){
+        let red = document.getElementById("rangeRed").value;
+        let green = document.getElementById("rangeGreen").value;
+        let blue = document.getElementById("rangeBlue").value;
+
+        let color = `rgb(${red},${green},${blue})`
+        document.documentElement.style.setProperty('--color-test', color);
+
+      }
+
+      document.getElementById("rangeRed").addEventListener("input", changeColor);
+      document.getElementById("rangeGreen").addEventListener("input", changeColor);
+      document.getElementById("rangeBlue").addEventListener("input", changeColor);
+
+
+
     </script>
   </body>
 </html>

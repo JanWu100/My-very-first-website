@@ -1,7 +1,7 @@
 :root {
-  --color-primary: rgb(178, 196, 17);
-  /* --color-primary: #50dcff; */
-
+  --color-primary: rgb(80, 220, 255);
+  /* --color-primary: rgb(80, 220, 255); */
+  --color-test: rgb(178, 196, 17);
   --color-body: #d3d3d3;
   --color-headings: #ffffff;
   --color-background: rgb(21, 21, 21);
@@ -1457,3 +1457,175 @@ p {
 }
   
 
+#colorOutput {
+  color: var(--color-primary);
+}
+
+/* Range inputs  */
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* border: 1px solid #000000; */
+  height: 20px;
+  width: 10px;
+  border-radius: 10px;
+  background: var(--color-primary);
+  cursor: pointer;
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  /* border: 1px solid #000000; */
+  height: 20px;
+  width: 4px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  /* border: 1px solid #000000; */
+  height: 20px;
+  width: 4px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+
+
+/* Style track  */
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--color-primary);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--color-primary);
+
+}
+input[type=range]::-ms-fill-upper {
+  background: var(--color-primary);
+
+  border-radius: 3px;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--color-primary);
+}
+
+.range-tool__wrapper {
+  /* height: 20px; */
+  width: 100%;
+  border-bottom: 1px solid var(--color-background-lighter);
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--color-background);
+  opacity: 0;
+  max-height: 0;
+  display: none;
+  /* transition: all 0.3s; */
+}
+
+.range-tool__container {
+  width: 70vw;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#rangeRed,
+#rangeGreen,
+#rangeBlue {
+  width: 100%;
+  height: 30px;
+}
+.range-tool__label {
+  text-align: center;
+  margin-bottom: 2rem;
+
+}
+
+.theme-color {
+  width: 2rem;
+  height: 2.2rem;
+  background: var(--color-primary);
+  display: inline-block;
+  margin-left: 1rem;
+  border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  .theme-color {
+    width: 1.6rem;
+    height: 1.6rem;
+
+  }
+}
+
+.range-tool__wrapper-btn {
+  cursor: pointer;
+}
+
+.range-visible {
+  opacity: 1;
+  display: unset;
+  max-height: 100%;
+}
