@@ -443,10 +443,11 @@ p {
 .hero-image {
   position: relative;
   overflow: hidden;
- align-content: center;
- text-align: center;
+  align-content: center;
+  text-align: center;
   width: 100%;
-  height: 100%;
+  max-height: 440px;
+  /* max-height: 340px; */
 }
 
 
@@ -475,6 +476,7 @@ p {
 @media screen and (min-width: 768px) {
   .hero__body-desc {
     max-width: 60ch;
+    max-height: unset;
   }
   .hero__body {
     padding: 8rem 0 8rem 5rem;
@@ -487,6 +489,7 @@ p {
   .hero-image {
     align-self: center;
     align-items: center;
+    max-height: unset;
 
   }
   .hero-svg {
@@ -1487,10 +1490,11 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
+/* style thumb  */
+
 /* Special styling for WebKit/Blink */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  /* border: 1px solid #000000; */
   height: 20px;
   width: 10px;
   border-radius: 10px;
@@ -1503,7 +1507,6 @@ input[type=range]::-webkit-slider-thumb {
 /* All the same stuff for Firefox */
 input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000;
-  /* border: 1px solid #000000; */
   height: 20px;
   width: 4px;
   border-radius: 3px;
@@ -1514,7 +1517,6 @@ input[type=range]::-moz-range-thumb {
 /* All the same stuff for IE */
 input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000;
-  /* border: 1px solid #000000; */
   height: 20px;
   width: 4px;
   border-radius: 3px;
@@ -1522,6 +1524,23 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 
+@media screen and (min-width: 768px){
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+  }
+  
+  /* All the same stuff for Firefox */
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    width: 20px;
+  }
+  
+  /* All the same stuff for IE */
+  input[type=range]::-ms-thumb {
+    width: 20px;
+  }
+}
 
 
 /* Style track  */
@@ -1582,7 +1601,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 20px;
   background: var(--color-background);
   opacity: 0;
-  max-height: 0;
+  
   display: none;
   /* transition: all 0.3s; */
 }
@@ -1627,5 +1646,5 @@ input[type=range]:focus::-ms-fill-upper {
 .range-visible {
   opacity: 1;
   display: unset;
-  max-height: 100%;
+  
 }
