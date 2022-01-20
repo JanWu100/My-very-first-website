@@ -313,3 +313,20 @@ function randomSection(){
   let randomSection = sections[Math.floor(Math.random() * sections.length)];
   document.getElementById(randomSection).scrollIntoView({behavior: 'smooth'});
 }
+
+////////// back to top button ////////////
+
+window.addEventListener("scroll", showBackToTopBtn);
+
+const topButton = document.querySelector("#back-to-top");
+
+function showBackToTopBtn() {
+  if (window.scrollY >= document.body.offsetHeight*0.7 ) {
+    topButton.classList.add("show");
+    topButton.addEventListener("click", ()=>{
+      document.getElementById("nav").scrollIntoView({behavior: 'smooth'});
+    })
+  } else {
+    topButton.classList.remove("show");
+  }
+};
