@@ -303,3 +303,13 @@ footerButtons.forEach((button) => {
     buttonRotator.classList.toggle("rotate-btn");
   });
 });
+
+
+////// random section /////////
+
+function randomSection(){
+
+  const sections = ["hero","great3-section","rwd","qualities","learning-now","products-section","cta-section"];
+  let randomSection = sections[Math.floor(Math.random() * sections.length)];
+  document.getElementById(randomSection).scrollIntoView({behavior: 'smooth'});
+}
