@@ -63,6 +63,7 @@ const burger = document.querySelector(".nav__burger-menu");
 burger.addEventListener("click", function (event) {
   document.querySelector(".nav__list").classList.toggle("collapsed");
   burger.classList.toggle("burger-active");
+  document.querySelector(".range-tool__wrapper").classList.remove("range-visible")
 });
 let minWidth = window.matchMedia("(min-width: 768px)");
 
@@ -70,6 +71,7 @@ function myFunction(e) {
   if (e.matches) {
     document.querySelector(".nav__list").classList.add("collapsed");
     burger.classList.remove("burger-active");
+    
   }
 }
 
@@ -334,11 +336,15 @@ function showBackToTopBtn() {
 // range tool  // // / 
 
 let btnRange = document.querySelector(".range-tool__wrapper-btn");
+let btnRangeClose = document.querySelector("#close");
+
+btnRangeClose.addEventListener("click", ()=>{
+document.querySelector(".range-tool__wrapper").classList.remove("range-visible")
+} )
 
 btnRange.addEventListener("click", ()=>{
-document.querySelector(".range-tool__wrapper").classList.toggle("range-visible")
-
-} )
+  document.querySelector(".range-tool__wrapper").classList.toggle("range-visible")
+  } )
 
 
 function changeColor(){
@@ -348,9 +354,28 @@ function changeColor(){
 
   let color = `rgb(${red},${green},${blue})`
   document.documentElement.style.setProperty('--color-primary', color);
+  document.querySelector(".valueRed").innerHTML = red;
+  document.querySelector(".valueGreen").innerHTML = green;
+  document.querySelector(".valueBlue").innerHTML = blue;
 
 }
 
 document.getElementById("rangeRed").addEventListener("input", changeColor);
 document.getElementById("rangeGreen").addEventListener("input", changeColor);
 document.getElementById("rangeBlue").addEventListener("input", changeColor);
+
+document.getElementById("defaults").addEventListener("click", ()=>{
+
+  let red = 80;
+  let green = 220;
+  let blue = 255;
+
+  let color = `rgb(${red},${green},${blue})`
+  document.documentElement.style.setProperty('--color-primary', color);
+  document.querySelector(".valueRed").innerHTML = red;
+  document.querySelector(".valueGreen").innerHTML = green;
+  document.querySelector(".valueBlue").innerHTML = blue;
+  document.querySelector("#rangeRed").value = 80;
+  document.querySelector("#rangeGreen").value = green;
+  document.querySelector("#rangeBlue").value = blue;
+})
