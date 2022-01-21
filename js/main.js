@@ -9,17 +9,16 @@ window.addEventListener("scroll", function (e) {
   const scrollIcon = this.document.querySelector(".scroll");
   let scrolled = window.pageYOffset;
   let rateOne = scrolled * 0.15;
-  
+
   let rateThree = scrolled * -0.15;
   let rotationRate = scrolled * 0.2;
   let opacityRate = scrolled * 0.0015;
- 
+
   scrollIcon.style.opacity = `${1 - opacityRate}`;
 
   heroBottomLayer.style.transform = `translate3d(0px, ${rateOne}px ,0px)`;
   heroBottomLayer.style.opacity = `${1 - opacityRate}`;
   heroBottomElipse.style.transform = `translate3d(0px, ${rateOne}px ,0px)`;
-
 
   heroCross.style.transform = `rotate(${rotationRate}deg)`;
   heroTopLayer.style.transform = `translate3d(0px, ${rateThree}px ,0px)`;
@@ -63,7 +62,9 @@ const burger = document.querySelector(".nav__burger-menu");
 burger.addEventListener("click", function (event) {
   document.querySelector(".nav__list").classList.toggle("collapsed");
   burger.classList.toggle("burger-active");
-  document.querySelector(".range-tool__wrapper").classList.remove("range-visible")
+  document
+    .querySelector(".range-tool__wrapper")
+    .classList.remove("range-visible");
 });
 let minWidth = window.matchMedia("(min-width: 768px)");
 
@@ -71,7 +72,6 @@ function myFunction(e) {
   if (e.matches) {
     document.querySelector(".nav__list").classList.add("collapsed");
     burger.classList.remove("burger-active");
-    
   }
 }
 
@@ -193,12 +193,12 @@ function makeDotsInteractive() {
   for (let i = 0; i < allDots.length; i++) {
     allDots[i].addEventListener("click", () => {
       if (i !== currentSlide) {
-                                delete allDots[currentSlide].dataset.active;
-                                delete allSlides[currentSlide].dataset.active;
-                                allDots[i].dataset.active = true;
-                                allSlides[i].dataset.active = true;
-                                currentSlide = i;
-                              }
+        delete allDots[currentSlide].dataset.active;
+        delete allSlides[currentSlide].dataset.active;
+        allDots[i].dataset.active = true;
+        allSlides[i].dataset.active = true;
+        currentSlide = i;
+      }
     });
   }
 }
@@ -211,7 +211,6 @@ function startTimer() {
 }
 
 function nextSlide() {
-
   let newIndex = currentSlide + 1;
 
   if (newIndex < 0) newIndex = allSlides.length - 1;
@@ -227,7 +226,7 @@ function nextSlide() {
 }
 
 function inputValidation(thisInput) {
-  thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 .!?,]/).join('');
+  thisInput.value = thisInput.value.split(/[^a-zA-Z0-9 .!?,]/).join("");
 }
 
 buttons.forEach((button) => {
@@ -281,7 +280,9 @@ removeSlide.addEventListener("click", () => {
   dots = [];
 
   if (startInput.length > 2) {
-    if (currentSlide === allSlides.length-1) {currentSlide--};
+    if (currentSlide === allSlides.length - 1) {
+      currentSlide--;
+    }
     // currentSlide = 0;
     startInput.pop();
     createCarousel();
@@ -306,14 +307,20 @@ footerButtons.forEach((button) => {
   });
 });
 
-
 ////// random section /////////
 
-function randomSection(){
-
-  const sections = ["hero","great3-section","rwd","qualities","learning-now","products-section","cta-section"];
+function randomSection() {
+  const sections = [
+    "hero",
+    "great3-section",
+    "rwd",
+    "qualities",
+    "learning-now",
+    "products-section",
+    "cta-section",
+  ];
   let randomSection = sections[Math.floor(Math.random() * sections.length)];
-  document.getElementById(randomSection).scrollIntoView({behavior: 'smooth'});
+  document.getElementById(randomSection).scrollIntoView({ behavior: "smooth" });
 }
 
 ////////// back to top button ////////////
@@ -323,59 +330,90 @@ window.addEventListener("scroll", showBackToTopBtn);
 const topButton = document.querySelector("#back-to-top");
 
 function showBackToTopBtn() {
-  if (window.scrollY >= document.body.offsetHeight*0.7 ) {
+  if (window.scrollY >= document.body.offsetHeight * 0.7) {
     topButton.classList.add("show");
-    topButton.addEventListener("click", ()=>{
-      document.getElementById("nav").scrollIntoView({behavior: 'smooth'});
-    })
+    topButton.addEventListener("click", () => {
+      document.getElementById("nav").scrollIntoView({ behavior: "smooth" });
+    });
   } else {
     topButton.classList.remove("show");
   }
-};
+}
 
-// range tool  // // / 
+// range tool  // // /
 
 let btnRange = document.querySelector(".range-tool__wrapper-btn");
 let btnRangeClose = document.querySelector("#close");
 
-btnRangeClose.addEventListener("click", ()=>{
-document.querySelector(".range-tool__wrapper").classList.remove("range-visible")
-} )
+btnRangeClose.addEventListener("click", () => {
+  document
+    .querySelector(".range-tool__wrapper")
+    .classList.remove("range-visible");
+});
 
-btnRange.addEventListener("click", ()=>{
-  document.querySelector(".range-tool__wrapper").classList.toggle("range-visible")
-  } )
+btnRange.addEventListener("click", () => {
+  document
+    .querySelector(".range-tool__wrapper")
+    .classList.toggle("range-visible");
+});
 
-
-function changeColor(){
+function changeColor() {
   let red = document.getElementById("rangeRed").value;
   let green = document.getElementById("rangeGreen").value;
   let blue = document.getElementById("rangeBlue").value;
 
-  let color = `rgb(${red},${green},${blue})`
-  document.documentElement.style.setProperty('--color-primary', color);
+  let color = `rgb(${red},${green},${blue})`;
+  document.documentElement.style.setProperty("--color-primary", color);
   document.querySelector(".valueRed").innerHTML = red;
   document.querySelector(".valueGreen").innerHTML = green;
   document.querySelector(".valueBlue").innerHTML = blue;
-
+  if (
+    (red < 100 && green < 50 && blue < 50) ||
+    (red < 50 && green < 100 && blue < 50) ||
+    (red < 50 && green < 50 && blue < 100) ||
+    (red == 0 && green == 0 && blue > 0)
+  ) {
+    document.documentElement.style.setProperty(
+      "--color-secondary",
+      "rgba(255,255,255,0.8)"
+    );
+  } else {
+    document.documentElement.style.setProperty(
+      "--color-secondary",
+      "rgba(0,0,0,0.8)"
+    );
+  }
 }
 
 document.getElementById("rangeRed").addEventListener("input", changeColor);
 document.getElementById("rangeGreen").addEventListener("input", changeColor);
 document.getElementById("rangeBlue").addEventListener("input", changeColor);
 
-document.getElementById("defaults").addEventListener("click", ()=>{
-
+document.getElementById("defaults").addEventListener("click", () => {
   let red = 80;
   let green = 220;
   let blue = 255;
 
-  let color = `rgb(${red},${green},${blue})`
-  document.documentElement.style.setProperty('--color-primary', color);
+  let color = `rgb(${red},${green},${blue})`;
+  document.documentElement.style.setProperty("--color-primary", color);
   document.querySelector(".valueRed").innerHTML = red;
   document.querySelector(".valueGreen").innerHTML = green;
   document.querySelector(".valueBlue").innerHTML = blue;
   document.querySelector("#rangeRed").value = 80;
   document.querySelector("#rangeGreen").value = green;
   document.querySelector("#rangeBlue").value = blue;
-})
+});
+
+// about me
+let aboutMe = document.getElementById("button-about-me");
+
+aboutMe.addEventListener("click", () => {
+  document.getElementById("about-me").classList.toggle("active");
+  document.body.classList.add("stop-scrolling");
+});
+
+document.querySelector(".close-tab-btn").addEventListener("click", () => {
+  document.getElementById("about-me").classList.toggle("active");
+  document.body.classList.remove("stop-scrolling");
+  document.querySelector(".range-tool__wrapper").classList.remove("range-visible");
+});

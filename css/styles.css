@@ -1,5 +1,6 @@
 :root {
   --color-primary: rgb(80, 220, 255);
+  --color-secondary: rgb(0, 0, 0);
   /* --color-primary: rgb(80, 220, 255); */
   --color-test: rgb(178, 196, 17);
   --color-body: #d3d3d3;
@@ -39,6 +40,18 @@ html {
 body {
   background-color: var(--color-background);
   overflow-x: hidden;
+}
+
+.stop-scrolling main,
+.stop-scrolling nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 /*Typography*/
@@ -340,7 +353,7 @@ p {
   border: none;
 }
 .btn--black:hover {
-  background: #004c5f;
+  background: #353535;
 }
 
 .btn--wide {
@@ -450,7 +463,6 @@ p {
   /* max-height: 340px; */
 }
 
-
 .hero-svg {
   width: 100%;
   height: 100%;
@@ -490,23 +502,18 @@ p {
     align-self: center;
     align-items: center;
     max-height: unset;
-
   }
   .hero-svg {
-    
     width: unset;
     height: 80%;
     margin: 10% 0;
-    
   }
 }
 @media screen and (min-width: 1024px) {
   .hero-svg {
-    
     width: unset;
     height: 100%;
     margin: 0;
-    
   }
 }
 
@@ -522,7 +529,6 @@ p {
     max-width: 100%;
   }
 }
-
 
 @keyframes bounce {
   0% {
@@ -597,20 +603,17 @@ p {
   transition: transform 0.3s;
 }
 
-.great3-card:nth-of-type(2n){
+.great3-card:nth-of-type(2n) {
   flex-direction: row-reverse;
 }
 
-.great3-card:nth-of-type(2n) .great3__body{
+.great3-card:nth-of-type(2n) .great3__body {
   text-align: right;
-
 }
 
 .great3__body {
   text-align: left;
 }
-
-
 
 .great3-card:hover {
   transform: scale(1.05);
@@ -623,12 +626,12 @@ p {
 
 .great3__body p {
   margin-bottom: 0;
-  font-size: 1.6rem
+  font-size: 1.6rem;
 }
 
 .great3-card__arrow {
   animation: blue-alpha 2s infinite;
-  
+
   height: 30px;
   justify-self: center;
   transform: rotate(90deg);
@@ -645,27 +648,24 @@ p {
     width: 160px;
   }
   .great3-card {
-  
-  column-gap: 4rem;
+    column-gap: 4rem;
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .great3-card {
     display: unset;
     max-width: 80%;
     margin-top: 3rem;
-    
-  } 
+  }
   .great3__body {
     text-align: center;
   }
- 
+
   .great3__image {
     width: unset;
     height: 200px;
   }
-  
 
   .great3-card__arrow {
     margin-top: 100px;
@@ -676,12 +676,10 @@ p {
     max-width: 260px;
   }
   .great3__image :first-child {
-    
     margin-bottom: 3rem;
   }
-  .great3-card:nth-of-type(2n) .great3__body{
+  .great3-card:nth-of-type(2n) .great3__body {
     text-align: center;
-  
   }
 }
 
@@ -795,7 +793,7 @@ p {
 /* Carousel */
 
 .form {
-  display:none;
+  display: none;
 }
 
 .carousel {
@@ -908,9 +906,7 @@ p {
   width: 14px;
   height: 14px;
   background: none;
-  
 }
-
 
 @media screen and (min-width: 768px) {
   .carousel {
@@ -1427,10 +1423,8 @@ p {
   }
 }
 
-
 /* back to top  */
 .back-to-top__wrapper {
-  
 }
 
 #back-to-top {
@@ -1442,23 +1436,19 @@ p {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
-  
 }
 
-#back-to-top.show{
+#back-to-top.show {
   opacity: 1;
-  pointer-events:all;
-
-  
+  pointer-events: all;
 }
 
 #back-to-top #arrow {
   fill: var(--color-background-lighter);
 }
-#back-to-top #elipse{
+#back-to-top #elipse {
   fill: var(--color-primary);
 }
-  
 
 #colorOutput {
   color: var(--color-primary);
@@ -1466,26 +1456,26 @@ p {
 
 /* Range inputs  */
 
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   cursor: pointer;
 
   /* Hides the slider so custom styles can be added */
-  background: transparent; 
+  background: transparent;
   border-color: transparent;
   color: transparent;
 }
@@ -1493,7 +1483,7 @@ input[type=range]::-ms-track {
 /* style thumb  */
 
 /* Special styling for WebKit/Blink */
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 20px;
   width: 20px;
@@ -1505,7 +1495,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* All the same stuff for Firefox */
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000;
   height: 20px;
   width: 20px;
@@ -1515,7 +1505,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 /* All the same stuff for IE */
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000;
   height: 20px;
   width: 20px;
@@ -1524,29 +1514,27 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px){
-  input[type=range]::-webkit-slider-thumb {
+@media screen and (min-width: 768px) {
+  input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 10px;
   }
-  
+
   /* All the same stuff for Firefox */
-  input[type=range]::-moz-range-thumb {
+  input[type="range"]::-moz-range-thumb {
     box-shadow: 1px 1px 1px #000000;
     width: 10px;
   }
-  
+
   /* All the same stuff for IE */
-  input[type=range]::-ms-thumb {
+  input[type="range"]::-ms-thumb {
     width: 10px;
   }
 }
 
-
 /* Style track  */
 
-
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
@@ -1554,11 +1542,11 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 3px;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: var(--color-primary);
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
@@ -1566,7 +1554,7 @@ input[type=range]::-moz-range-track {
   border-radius: 3px;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
@@ -1575,20 +1563,19 @@ input[type=range]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
   background: var(--color-primary);
   border-radius: 3px;
 }
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
   background: var(--color-primary);
-
 }
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
   background: var(--color-primary);
 
   border-radius: 3px;
 }
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
   background: var(--color-primary);
 }
 
@@ -1601,7 +1588,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 20px;
   background: var(--color-background);
   opacity: 0;
-  
+
   display: none;
   /* transition: all 0.3s; */
 }
@@ -1623,7 +1610,6 @@ input[type=range]:focus::-ms-fill-upper {
   margin-bottom: 4rem;
   font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   font-size: 3rem;
-
 }
 
 .theme-color {
@@ -1638,37 +1624,32 @@ input[type=range]:focus::-ms-fill-upper {
   .theme-color {
     width: 1.6rem;
     height: 1.6rem;
-
   }
 }
 
 .range-tool__wrapper-btn {
   cursor: pointer;
 }
-.range-tool__wrapper{
+.range-tool__wrapper {
   padding: 3rem 0;
 }
 
 .range-visible {
   opacity: 1;
   display: unset;
-  
 }
 
 .range-tool__container {
   display: flex;
 }
 
-.range__value{
-  
+.range__value {
   font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   font-size: 2.2rem;
   margin-left: 2rem;
-
 }
 
-.range__label{
-  
+.range__label {
   font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   font-size: 2.2rem;
   margin-right: 2rem;
@@ -1687,4 +1668,116 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 2rem;
   color: var(--color-primary);
   cursor: pointer;
+}
+
+/* About me  */
+
+#about-me h1,
+#about-me h2,
+#about-me h3,
+#about-me h4,
+#about-me p {
+  color: var(--color-secondary);
+}
+
+.about-me__bg {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  display: block;
+  transition: transform 0.2s ease-in;
+  transform: translateY(-100%);
+}
+
+.close-tab-btn #close-tab {
+  fill: var(--color-secondary);
+  transform: rotate(360deg);
+  transition: all 0.2s;
+}
+
+.about-me__body {
+  pointer-events: none;
+  /* margin-top: 4rem; */
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  opacity: 0;
+  transition-delay: 0.2s;
+  transition: all 0.3s;
+  padding: 10rem 4rem 0 2rem;
+}
+
+
+
+.about-me__icon {
+  color: var(--color-secondary);
+  font-size: 3.4rem;
+  margin-right: 1rem;
+  margin-bottom: 6rem;
+}
+
+.close-tab-btn {
+  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  top: 3rem;
+  right: 3rem;
+  opacity: 0;
+  transition-delay: 0.2s;
+  transform: rotate(150deg);
+  transition: all 0.3s ease-out;
+}
+
+.active .close-tab-btn {
+  pointer-events: unset;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.active .about-me__bg {
+  transform: translateY(0);
+}
+.active .about-me__body {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+@media screen and (min-width: 768px) {
+  .about-me__body {
+    padding: 0;
+    position: fixed;
+    justify-content: center;
+  }
+  .close-tab-btn {
+    position: fixed;
+    display: flex;
+    width: unset;
+    top: 5rem;
+    right: unset;
+  }
+  .about-me__icon {
+    
+    margin-bottom: 0;
+  }
+  
+  .close-tab__wrapper {
+    display: flex;
+    justify-content: right;
+  }
+
+  #about-me h1,
+  #about-me h2,
+  #about-me h3,
+  #about-me h4,
+  #about-me p {
+    max-width: 400px;
+  }
 }
