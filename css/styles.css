@@ -137,6 +137,7 @@ p {
   fill: var(--color-primary);
 }
 
+
 .technologies__icon {
   font-size: 50px;
   color: rgb(71, 71, 71);
@@ -1749,6 +1750,12 @@ input[type="range"]:focus::-ms-fill-upper {
   opacity: 1;
   pointer-events: unset;
 }
+#about-me {
+  max-height: 0;
+}
+#about-me.active {
+  max-height: unset;
+}
 
 @media screen and (min-width: 768px) {
   .about-me__body {
@@ -1780,4 +1787,135 @@ input[type="range"]:focus::-ms-fill-upper {
   #about-me p {
     max-width: 400px;
   }
+
+  
 }
+
+#html-gfx #frame {
+  fill: rgb(110, 110, 110);
+}
+
+#html-gfx  #buttons {
+  fill: var(--color-primary);
+}
+
+#html-gfx #crate {
+  fill: var(--color-primary);
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+
+#html-gfx #tab1 {
+  fill: white;
+  transform: translateY(0);
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
+
+#html-gfx #tab2 {
+  fill: white;
+  opacity: 0;
+  transition: all 0.3s;
+  transition-delay: 0.6s;
+
+}
+
+.great3-card:hover #html-gfx #frame {
+  fill: rgb(110, 110, 110);
+}
+
+.great3-card:hover #html-gfx  #buttons {
+  
+}
+
+.great3-card:hover #html-gfx #crate {
+  fill: var(--color-primary);
+  transform: translateY(38px);
+}
+
+.great3-card:hover #html-gfx #tab1 {
+  fill: white;
+  transform: translateY(38px);
+}
+
+.great3-card:hover #html-gfx #tab2 {
+  fill: var(--color-primary);
+  opacity: 1;
+}
+
+
+
+#css-gfx #tab1 {
+  fill: rgb(110, 110, 110);
+  transition: all 0.7s;
+
+}
+#css-gfx #thumb1 {
+  fill: white;
+  transform: translateX(0);
+  transition: 0.5s;
+
+}
+#css-gfx #thumb2 {
+  fill: white;
+  transform: translateX(0);
+  transition: 0.5s;
+}
+#css-gfx #thumb3 {
+  fill: white;
+  transform: translateX(0);
+  transition: 0.5s;
+}
+#css-gfx #line1 {
+  fill: rgb(110, 110, 110);
+  transition: all 0.7s;
+  width: 117px;
+}
+#css-gfx #line2 {
+  fill: var(--color-primary);
+  transition: 0.7s;
+}
+#css-gfx #line3 {
+  fill: rgb(110, 110, 110);
+  transition: all 0.7s;
+  /* transition-delay: 1s; */
+}
+
+.great3-card:hover #css-gfx #tab1 {
+  fill: var(--color-primary);
+  transition-delay: 1s;
+
+}
+.great3-card:hover #css-gfx #thumb1 {
+  fill: white;
+  transform: translateX(49px);
+}
+.great3-card:hover #css-gfx #thumb2 {
+  fill: white;
+  transform: translateX(-99px);
+
+}
+.great3-card:hover #css-gfx #thumb3 {
+  fill: white;
+  transform: translateX(49px);
+  transition-delay: 1s;
+
+  
+
+}
+.great3-card:hover #css-gfx #line1 {
+  fill: var(--color-primary);
+}
+.great3-card:hover #css-gfx #line2 {
+  fill: rgb(110, 110, 110);
+
+}
+.great3-card:hover #css-gfx #line3 {
+  fill: var(--color-primary);
+  transition-delay: 1s;
+
+
+
+
+}
+
