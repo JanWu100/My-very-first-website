@@ -691,6 +691,11 @@ p {
 }
 .rwd .icon {
   width: 2rem;
+  height: 2rem;
+  display:inline;
+  transform: translateY(3px);
+  margin-right: 1rem;
+
 }
 
 .media {
@@ -702,7 +707,7 @@ p {
 .rwd__bullets p {
   margin: 2px 0;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
   font-size: 1.6rem;
   font-weight: 900;
   color: var(--color-primary);
@@ -730,6 +735,12 @@ p {
     var(--color-background) 80%,
     var(--color-background-lighter) 80%
   );
+}
+
+@media screen and (min-width: 400px) {
+  .rwd__bullets p {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1365,7 +1376,7 @@ p {
 .footer .logo {
   width: 160px;
   /* padding: 2rem; */
-  margin: 6rem;
+  margin: 6rem 0;
 }
 
 .footer-logo {
@@ -1394,6 +1405,7 @@ p {
   .footer-logo {
     grid-area: 1;
     text-align: left;
+    
   }
   .footer .nav__item a {
     font-size: 1.4rem;
@@ -1403,6 +1415,9 @@ p {
   }
   .footer .logo {
     margin: 2rem 0 0 2rem;
+    width: 160px;
+    /* padding: 2rem; */
+    
   }
 
   .menu__item {
