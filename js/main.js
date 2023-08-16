@@ -83,7 +83,7 @@ window.addEventListener("resize", function (event) {
 
 let startInput = [
   {
-    image: "/images/man_in_glasses.jpg",
+    image: "./images/man_in_glasses.jpg",
     title: "the man",
     bodyText: `Photo by
       <a
@@ -99,7 +99,7 @@ let startInput = [
       >`,
   },
   {
-    image: "/images/balcony.png",
+    image: "./images/balcony.png",
     title: "the second",
     bodyText: `Photo by
       <a
@@ -115,7 +115,7 @@ let startInput = [
       >`,
   },
   {
-    image: "/images/texture.jpg",
+    image: "./images/texture.jpg",
     title: "the third",
     bodyText: `Photo by
     <a
